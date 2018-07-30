@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="146" y="303"/>
         </scene>
-        <!--Root View Controller-->
+        <!--French Wine-->
         <scene sceneID="2Dp-Gh-yJs">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="gHl-wW-qLM" customClass="RootTableViewController" customModule="French_Wine" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,12 +34,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Go to home" id="vbW-FF-RMf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="regionCell" textLabel="cZM-eH-e23" style="IBUITableViewCellStyleDefault" id="vbW-FF-RMf">
                                 <rect key="frame" x="0.0" y="28" width="295" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vbW-FF-RMf" id="a2F-BY-Yak">
                                     <rect key="frame" x="0.0" y="0.0" width="295" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cZM-eH-e23">
+                                            <rect key="frame" x="16" y="0.0" width="263" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -48,7 +57,7 @@
                             <outlet property="delegate" destination="gHl-wW-qLM" id="trq-WO-1hx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rgX-gW-UO9"/>
+                    <navigationItem key="navigationItem" title="French Wine" id="rgX-gW-UO9"/>
                     <connections>
                         <segue destination="21Y-oe-b3d" kind="show" identifier="Go to detail" id="IgR-Z1-MXb"/>
                     </connections>
@@ -61,9 +70,16 @@
         <scene sceneID="El5-9X-aRh">
             <objects>
                 <navigationController id="0nk-3o-k91" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DeQ-bL-6Cw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="DeQ-bL-6Cw">
                         <rect key="frame" x="0.0" y="0.0" width="295" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="gHl-wW-qLM" kind="relationship" relationship="rootViewController" id="Mzv-rf-LG4"/>

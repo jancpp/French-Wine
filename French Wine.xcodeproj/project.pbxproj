@@ -14,6 +14,14 @@
 		3D8B6D56210F684D008DD74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D55210F684D008DD74F /* Assets.xcassets */; };
 		3D8B6D59210F684D008DD74F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D57210F684D008DD74F /* LaunchScreen.storyboard */; };
 		3D8B6D65210F942D008DD74F /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D64210F942D008DD74F /* RootTableViewController.swift */; };
+		3D8B6D6E210F9648008DD74F /* Wine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D66210F9648008DD74F /* Wine+CoreDataClass.swift */; };
+		3D8B6D6F210F9648008DD74F /* Wine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D67210F9648008DD74F /* Wine+CoreDataProperties.swift */; };
+		3D8B6D70210F9648008DD74F /* Region+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D68210F9648008DD74F /* Region+CoreDataClass.swift */; };
+		3D8B6D71210F9648008DD74F /* Region+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D69210F9648008DD74F /* Region+CoreDataProperties.swift */; };
+		3D8B6D72210F9648008DD74F /* Variety+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D6A210F9648008DD74F /* Variety+CoreDataClass.swift */; };
+		3D8B6D73210F9648008DD74F /* Variety+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D6B210F9648008DD74F /* Variety+CoreDataProperties.swift */; };
+		3D8B6D74210F9648008DD74F /* Subregion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D6C210F9648008DD74F /* Subregion+CoreDataClass.swift */; };
+		3D8B6D75210F9648008DD74F /* Subregion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D6D210F9648008DD74F /* Subregion+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		3D8B6D58210F684D008DD74F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D8B6D5A210F684D008DD74F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8B6D64210F942D008DD74F /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		3D8B6D66210F9648008DD74F /* Wine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D8B6D67210F9648008DD74F /* Wine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3D8B6D68210F9648008DD74F /* Region+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D8B6D69210F9648008DD74F /* Region+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3D8B6D6A210F9648008DD74F /* Variety+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Variety+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D8B6D6B210F9648008DD74F /* Variety+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Variety+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3D8B6D6C210F9648008DD74F /* Subregion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subregion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D8B6D6D210F9648008DD74F /* Subregion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subregion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +102,14 @@
 		3D8B6D62210F6A65008DD74F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D8B6D66210F9648008DD74F /* Wine+CoreDataClass.swift */,
+				3D8B6D67210F9648008DD74F /* Wine+CoreDataProperties.swift */,
+				3D8B6D68210F9648008DD74F /* Region+CoreDataClass.swift */,
+				3D8B6D69210F9648008DD74F /* Region+CoreDataProperties.swift */,
+				3D8B6D6A210F9648008DD74F /* Variety+CoreDataClass.swift */,
+				3D8B6D6B210F9648008DD74F /* Variety+CoreDataProperties.swift */,
+				3D8B6D6C210F9648008DD74F /* Subregion+CoreDataClass.swift */,
+				3D8B6D6D210F9648008DD74F /* Subregion+CoreDataProperties.swift */,
 				3D8B6D52210F684C008DD74F /* French_Wine.xcdatamodeld */,
 			);
 			path = Model;
@@ -173,10 +197,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D8B6D74210F9648008DD74F /* Subregion+CoreDataClass.swift in Sources */,
 				3D8B6D4E210F684C008DD74F /* DetailViewController.swift in Sources */,
+				3D8B6D71210F9648008DD74F /* Region+CoreDataProperties.swift in Sources */,
 				3D8B6D4C210F684C008DD74F /* AppDelegate.swift in Sources */,
+				3D8B6D70210F9648008DD74F /* Region+CoreDataClass.swift in Sources */,
 				3D8B6D54210F684C008DD74F /* French_Wine.xcdatamodeld in Sources */,
+				3D8B6D75210F9648008DD74F /* Subregion+CoreDataProperties.swift in Sources */,
 				3D8B6D65210F942D008DD74F /* RootTableViewController.swift in Sources */,
+				3D8B6D73210F9648008DD74F /* Variety+CoreDataProperties.swift in Sources */,
+				3D8B6D6F210F9648008DD74F /* Wine+CoreDataProperties.swift in Sources */,
+				3D8B6D6E210F9648008DD74F /* Wine+CoreDataClass.swift in Sources */,
+				3D8B6D72210F9648008DD74F /* Variety+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
