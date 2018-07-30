@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Region" representedClassName="Region" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="subRegions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subregion" inverseName="mainRegion" inverseEntity="Subregion" syncable="YES"/>
+        <relationship name="varieties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Variety" inverseName="regions" inverseEntity="Variety" syncable="YES"/>
+        <relationship name="wine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wine" inverseName="region" inverseEntity="Wine" syncable="YES"/>
+    </entity>
+    <entity name="Subregion" representedClassName="Subregion" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mainRegion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="subRegions" inverseEntity="Region" syncable="YES"/>
+    </entity>
+    <entity name="Variety" representedClassName="Variety" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="regions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Region" inverseName="varieties" inverseEntity="Region" syncable="YES"/>
+        <relationship name="wine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wine" inverseName="varierites" inverseEntity="Wine" syncable="YES"/>
+    </entity>
+    <entity name="Wine" representedClassName="Wine" syncable="YES">
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="wine" inverseEntity="Region" syncable="YES"/>
+        <relationship name="varierites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Variety" inverseName="wine" inverseEntity="Variety" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Wine" positionX="-326" positionY="-108" width="128" height="103"/>
+        <element name="Region" positionX="-72" positionY="-45" width="128" height="118"/>
+        <element name="Variety" positionX="-342" positionY="108" width="128" height="88"/>
+        <element name="Subregion" positionX="-38" positionY="168" width="128" height="73"/>
+    </elements>
+</model>

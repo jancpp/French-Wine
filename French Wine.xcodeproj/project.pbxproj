@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		3D8B6D4C210F684C008DD74F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D4B210F684C008DD74F /* AppDelegate.swift */; };
-		3D8B6D4E210F684C008DD74F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D4D210F684C008DD74F /* ViewController.swift */; };
+		3D8B6D4E210F684C008DD74F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D4D210F684C008DD74F /* DetailViewController.swift */; };
 		3D8B6D51210F684C008DD74F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D4F210F684C008DD74F /* Main.storyboard */; };
 		3D8B6D54210F684C008DD74F /* French_Wine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D52210F684C008DD74F /* French_Wine.xcdatamodeld */; };
 		3D8B6D56210F684D008DD74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D55210F684D008DD74F /* Assets.xcassets */; };
 		3D8B6D59210F684D008DD74F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D57210F684D008DD74F /* LaunchScreen.storyboard */; };
+		3D8B6D65210F942D008DD74F /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D64210F942D008DD74F /* RootTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D8B6D48210F684C008DD74F /* French Wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "French Wine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8B6D4B210F684C008DD74F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D8B6D4D210F684C008DD74F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D8B6D4D210F684C008DD74F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3D8B6D50210F684C008DD74F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D8B6D53210F684C008DD74F /* French_Wine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = French_Wine.xcdatamodel; sourceTree = "<group>"; };
 		3D8B6D55210F684D008DD74F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D8B6D58210F684D008DD74F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D8B6D5A210F684D008DD74F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D8B6D64210F942D008DD74F /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		3D8B6D4A210F684C008DD74F /* French Wine */ = {
 			isa = PBXGroup;
 			children = (
-				3D8B6D4B210F684C008DD74F /* AppDelegate.swift */,
-				3D8B6D4D210F684C008DD74F /* ViewController.swift */,
+				3D8B6D62210F6A65008DD74F /* Model */,
+				3D8B6D60210F6A4B008DD74F /* View */,
+				3D8B6D61210F6A59008DD74F /* Controller */,
+				3D8B6D63210F6A6D008DD74F /* Supporting Files */,
+			);
+			path = "French Wine";
+			sourceTree = "<group>";
+		};
+		3D8B6D60210F6A4B008DD74F /* View */ = {
+			isa = PBXGroup;
+			children = (
 				3D8B6D4F210F684C008DD74F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D8B6D61210F6A59008DD74F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D8B6D4D210F684C008DD74F /* DetailViewController.swift */,
+				3D8B6D64210F942D008DD74F /* RootTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D8B6D62210F6A65008DD74F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D8B6D52210F684C008DD74F /* French_Wine.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D8B6D63210F6A6D008DD74F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D8B6D4B210F684C008DD74F /* AppDelegate.swift */,
 				3D8B6D55210F684D008DD74F /* Assets.xcassets */,
 				3D8B6D57210F684D008DD74F /* LaunchScreen.storyboard */,
 				3D8B6D5A210F684D008DD74F /* Info.plist */,
-				3D8B6D52210F684C008DD74F /* French_Wine.xcdatamodeld */,
 			);
-			path = "French Wine";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D8B6D4E210F684C008DD74F /* ViewController.swift in Sources */,
+				3D8B6D4E210F684C008DD74F /* DetailViewController.swift in Sources */,
 				3D8B6D4C210F684C008DD74F /* AppDelegate.swift in Sources */,
 				3D8B6D54210F684C008DD74F /* French_Wine.xcdatamodeld in Sources */,
+				3D8B6D65210F942D008DD74F /* RootTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SQFG95Y4R;
-				INFOPLIST_FILE = "French Wine/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/French Wine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SQFG95Y4R;
-				INFOPLIST_FILE = "French Wine/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/French Wine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
