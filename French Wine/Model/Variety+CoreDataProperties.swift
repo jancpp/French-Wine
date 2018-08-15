@@ -2,7 +2,7 @@
 //  Variety+CoreDataProperties.swift
 //  French Wine
 //
-//  Created by Jan Polzer on 7/30/18.
+//  Created by Jan Polzer on 8/14/18.
 //  Copyright © 2018 Apps KC. All rights reserved.
 //
 //
@@ -19,7 +19,6 @@ extension Variety {
 
     @NSManaged public var name: String?
     @NSManaged public var regions: NSSet?
-    @NSManaged public var wine: Wine?
 
 }
 

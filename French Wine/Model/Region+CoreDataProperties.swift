@@ -2,7 +2,7 @@
 //  Region+CoreDataProperties.swift
 //  French Wine
 //
-//  Created by Jan Polzer on 7/30/18.
+//  Created by Jan Polzer on 8/14/18.
 //  Copyright © 2018 Apps KC. All rights reserved.
 //
 //
@@ -18,27 +18,9 @@ extension Region {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var picture: NSObject?
-    @NSManaged public var subRegions: NSSet?
+    @NSManaged public var type: String?
+    @NSManaged public var summary: String?
     @NSManaged public var varieties: NSSet?
-    @NSManaged public var wine: Wine?
-
-}
-
-// MARK: Generated accessors for subRegions
-extension Region {
-
-    @objc(addSubRegionsObject:)
-    @NSManaged public func addToSubRegions(_ value: Subregion)
-
-    @objc(removeSubRegionsObject:)
-    @NSManaged public func removeFromSubRegions(_ value: Subregion)
-
-    @objc(addSubRegions:)
-    @NSManaged public func addToSubRegions(_ values: NSSet)
-
-    @objc(removeSubRegions:)
-    @NSManaged public func removeFromSubRegions(_ values: NSSet)
 
 }
 

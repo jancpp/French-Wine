@@ -1,0 +1,160 @@
+{
+    "wines": [
+        {
+            "id": "white alsace",
+            "region": [
+                {
+                    "name": "Alsace"
+                }
+            ],
+            "type": "white",
+            "varieties": [
+                {
+                    "name": "Riesling"
+                },
+                {
+                    "name": "Gewurztraminer"
+                },
+                {
+                    "name": "Pinot gris"
+                },
+                {
+                    "name": "Pinot blanc"
+                },
+                {
+                    "name": "Muscat"
+                }
+            ],
+            "summary": ""
+        },
+        {
+            "id": "white bordeaux",
+            "region": [
+                {
+                    "name": "Bordeaux"
+                }
+            ],
+            "type": "white",
+            "varieties": [
+                {
+                    "name": "Sauvignon blanc"
+                },
+                {
+                    "name": "Sémillon"
+                },
+                {
+                    "name": "Muscadelle"
+                }
+            ],
+            "summary": "usually dry, mineral"
+        },
+        {
+            "id": "red bordeaux",
+            "region": [
+                {
+                    "name": "Bordeaux"
+                }
+            ],
+            "type": "red",
+            "varieties": [
+                {
+                    "name": "Merlot"
+                },
+                {
+                    "name": "Cabernet franc"
+                },
+                {
+                    "name": "Cabernet sauvignon"
+                }
+            ],
+            "summary": ""
+        },
+        {
+            "id": "white burgundy",
+            "region": [
+                {
+                    "name": "Burgundy"
+                }
+            ],
+            "type": "white",
+            "varieties": [
+                {
+                    "name": "Chardonnay"
+                }
+            ],
+            "summary": ""
+        },
+        {
+            "id": "red burgundy",
+            "region": [
+                {
+                    "name": "Burgundy"
+                }
+            ],
+            "type": "red",
+            "varieties": [
+                {
+                    "name": "Pinot noir"
+                },
+                {
+                    "name": "Gamay"
+                }
+            ],
+            "summary": ""
+        },
+        {
+            "id": "champagne",
+            "region": [
+                {
+                    "name": "Champagne"
+                }
+            ],
+            "type": "sparkling",
+            "varieties": [
+                {
+                    "name": "Chardonnay"
+                },
+                {
+                    "name": "Pinot noir"
+                }
+            ],
+            "summary": ""
+        },
+        {
+            "id": "white loire",
+            "region": [
+                {
+                    "name": "Loire"
+                }
+            ],
+            "type": "white",
+            "varieties": [
+                {
+                    "name": "Sauvignon blanc"
+                },
+                {
+                    "name": "Chenin blanc"
+                },
+                {
+                    "name": "Melon de Bourgogne"
+                }
+            ],
+            "summary": ""
+        },
+        {
+            "id": "red loire",
+            "region": [
+                {
+                    "name": "Loire"
+                }
+            ],
+            "type": "red",
+            "varieties": [
+                {
+                    "name": "Cabernet franc"
+                }
+            ],
+            "summary": ""
+        }
+    ]
+}

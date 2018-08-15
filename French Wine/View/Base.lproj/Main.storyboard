@@ -28,20 +28,20 @@
         <!--French Wine-->
         <scene sceneID="2Dp-Gh-yJs">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="gHl-wW-qLM" customClass="RootTableViewController" customModule="French_Wine" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="gHl-wW-qLM" customClass="RegionTableViewController" customModule="French_Wine" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8z7-Or-4Ei">
                         <rect key="frame" x="0.0" y="0.0" width="295" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="regionCell" textLabel="cZM-eH-e23" style="IBUITableViewCellStyleDefault" id="vbW-FF-RMf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="regionCell" textLabel="cZM-eH-e23" style="IBUITableViewCellStyleDefault" id="vbW-FF-RMf" customClass="RegionTableViewCell" customModule="French_Wine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="295" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vbW-FF-RMf" id="a2F-BY-Yak">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vbW-FF-RMf" id="a2F-BY-Yak" customClass="RegionTableViewCell" customModule="French_Wine" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="295" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cZM-eH-e23">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cZM-eH-e23">
                                             <rect key="frame" x="16" y="0.0" width="263" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -50,6 +50,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="regionNameLabel" destination="cZM-eH-e23" id="eVy-F1-0ds"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
