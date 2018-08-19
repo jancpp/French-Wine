@@ -1,5 +1,5 @@
 //
-//  RootTableViewController.swift
+//  RegionTableViewController.swift
 //  French Wine
 //
 //  Created by Jan Polzer on 7/30/18.
@@ -13,19 +13,16 @@ import CoreData
 class RegionTableViewController: UITableViewController {
     
     private var coreData = CoreDataStack()
-    private var fetchResultController: NSFetchedResultsController<Region>?
     
     // MARK: - Properties
     
-//    weak var managedObjectContext: NSManagedObjectContext! {
-//        didSet {
-//            return region = Region(context: managedObjectContext)
-//        }
-//    }
-//
-//    private lazy var regions = [Region]()
-//    private var region: Region?
-//    private var type: String = ""
+    weak var managedObjectContext: NSManagedObjectContext! {
+        didSet {
+            return region = Region(context: managedObjectContext)
+        }
+    }
+    private lazy var regions = [Region]()
+    private var region: Region?
 
     // MARK: - Initialization
 
@@ -41,16 +38,9 @@ class RegionTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if let sections = fetchResultController?.sections {
-            return sections.count
-        }
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let sections = fetchResultController?.sections {
-            return sections[section].numberOfObjects
+        if regions.count > 0 {
+            return regions.count
         }
         return 0
     }
@@ -58,18 +48,31 @@ class RegionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "regionCell", for: indexPath) as! RegionTableViewCell
         
-        if let region = fetchResultController?.object(at: indexPath) {
-            cell.configureCell(region: region)
-        }
-
+        cell.textLabel?.text = regions[indexPath.row].name
+        
         return cell
- }
+    }
+
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {return}
+        
+//        if identifier == "Show Detail" {
+//            let destination = segue.destination as! DetailTableViewController
+//
+//            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+//                let selectedRegion = regions[selectedIndexPath.row]
+//                destination.region = selectedRegion
+//                destination.moc = managedObjectContext
+//            }
+//        }
+    }
 
     // MARK: - private
     
     private func loadData() {
-        fetchResultController = WineService.getRegions(moc: coreData.persistentContainer.viewContext)
+        regions = WineService.getUniqueRegionNames(moc: coreData.persistentContainer.viewContext)
     }
 }
-
 

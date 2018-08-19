@@ -14,11 +14,12 @@
 		3D2E592021236082007CD08F /* Variety+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E591C21236082007CD08F /* Variety+CoreDataProperties.swift */; };
 		3D8B281B2115F64000ABA868 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B281A2115F64000ABA868 /* CoreDataStack.swift */; };
 		3D8B6D4C210F684C008DD74F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D4B210F684C008DD74F /* AppDelegate.swift */; };
-		3D8B6D4E210F684C008DD74F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D4D210F684C008DD74F /* DetailViewController.swift */; };
 		3D8B6D51210F684C008DD74F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D4F210F684C008DD74F /* Main.storyboard */; };
 		3D8B6D56210F684D008DD74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D55210F684D008DD74F /* Assets.xcassets */; };
 		3D8B6D59210F684D008DD74F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B6D57210F684D008DD74F /* LaunchScreen.storyboard */; };
 		3D8B6D65210F942D008DD74F /* RegionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B6D64210F942D008DD74F /* RegionTableViewController.swift */; };
+		3D905A89212603F200FF143E /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D905A88212603F200FF143E /* DetailTableViewCell.swift */; };
+		3D905A8B212604EB00FF143E /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D905A8A212604EB00FF143E /* DetailTableViewController.swift */; };
 		3DA4591E211A0066007FF5E0 /* WineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4591D211A0066007FF5E0 /* WineService.swift */; };
 		3DAD466F211CA4E700920407 /* wines.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD466E211CA4E700920407 /* wines.json */; };
 		3DC181F9211A98D500DEC787 /* French_Wine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DC181F7211A98D500DEC787 /* French_Wine.xcdatamodeld */; };
@@ -34,12 +35,13 @@
 		3D8B281A2115F64000ABA868 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		3D8B6D48210F684C008DD74F /* French Wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "French Wine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8B6D4B210F684C008DD74F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D8B6D4D210F684C008DD74F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3D8B6D50210F684C008DD74F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D8B6D55210F684D008DD74F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D8B6D58210F684D008DD74F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D8B6D5A210F684D008DD74F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D8B6D64210F942D008DD74F /* RegionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewController.swift; sourceTree = "<group>"; };
+		3D8B6D64210F942D008DD74F /* RegionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
+		3D905A88212603F200FF143E /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		3D905A8A212604EB00FF143E /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		3DA4591D211A0066007FF5E0 /* WineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineService.swift; sourceTree = "<group>"; };
 		3DAD466E211CA4E700920407 /* wines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wines.json; sourceTree = "<group>"; };
 		3DC181F8211A98D500DEC787 /* French_Wine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = French_Wine.xcdatamodel; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				3D8B6D4F210F684C008DD74F /* Main.storyboard */,
 				3DE102292123A19400769FB2 /* RegionTableViewCell.swift */,
+				3D905A88212603F200FF143E /* DetailTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,8 +108,8 @@
 		3D8B6D61210F6A59008DD74F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3D8B6D4D210F684C008DD74F /* DetailViewController.swift */,
 				3D8B6D64210F942D008DD74F /* RegionTableViewController.swift */,
+				3D905A8A212604EB00FF143E /* DetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,14 +214,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D2E591F21236082007CD08F /* Variety+CoreDataClass.swift in Sources */,
-				3D8B6D4E210F684C008DD74F /* DetailViewController.swift in Sources */,
 				3DA4591E211A0066007FF5E0 /* WineService.swift in Sources */,
 				3DE1022A2123A19400769FB2 /* RegionTableViewCell.swift in Sources */,
 				3D8B6D4C210F684C008DD74F /* AppDelegate.swift in Sources */,
 				3D2E591E21236082007CD08F /* Region+CoreDataProperties.swift in Sources */,
 				3DC181F9211A98D500DEC787 /* French_Wine.xcdatamodeld in Sources */,
+				3D905A89212603F200FF143E /* DetailTableViewCell.swift in Sources */,
 				3D2E591721235C76007CD08F /* Region+Extension.swift in Sources */,
 				3D2E591D21236082007CD08F /* Region+CoreDataClass.swift in Sources */,
+				3D905A8B212604EB00FF143E /* DetailTableViewController.swift in Sources */,
 				3D8B281B2115F64000ABA868 /* CoreDataStack.swift in Sources */,
 				3D2E592021236082007CD08F /* Variety+CoreDataProperties.swift in Sources */,
 				3D8B6D65210F942D008DD74F /* RegionTableViewController.swift in Sources */,

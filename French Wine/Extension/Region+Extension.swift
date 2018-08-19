@@ -12,6 +12,7 @@ import CoreData
 extension Region {
     func getRegionsByType(type: String, moc: NSManagedObjectContext) -> [Region] {
         let request: NSFetchRequest<Region> = Region.fetchRequest()
+        //        request.predicate = NSPredicate(format: "type = %@", NSString(string: type))
         request.predicate = NSPredicate(format: "type = %@", NSString(string: type))
         
         do {
