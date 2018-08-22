@@ -2,7 +2,7 @@
 //  Variety+CoreDataProperties.swift
 //  French Wine
 //
-//  Created by Jan Polzer on 8/14/18.
+//  Created by Jan Polzer on 8/21/18.
 //  Copyright © 2018 Apps KC. All rights reserved.
 //
 //
@@ -18,23 +18,6 @@ extension Variety {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var regions: NSSet?
-
-}
-
-// MARK: Generated accessors for regions
-extension Variety {
-
-    @objc(addRegionsObject:)
-    @NSManaged public func addToRegions(_ value: Region)
-
-    @objc(removeRegionsObject:)
-    @NSManaged public func removeFromRegions(_ value: Region)
-
-    @objc(addRegions:)
-    @NSManaged public func addToRegions(_ values: NSSet)
-
-    @objc(removeRegions:)
-    @NSManaged public func removeFromRegions(_ values: NSSet)
+    @NSManaged public var region: Region?
 
 }

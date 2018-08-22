@@ -11,63 +11,60 @@ import CoreData
 
 class DetailTableViewController: UITableViewController {
 
-    // MARK: - Property
+    private var coreData = CoreDataStack()
+    
+    // MARK: - Properties
     
     private lazy var regionTypes = [Region]()
-    var region: Region?
-    private var type: String?
-    
-    weak var moc: NSManagedObjectContext! {
+    private lazy var varieties = [Variety]()
+    weak var managedObjectContext: NSManagedObjectContext!
+
+    var selectedRegion: Region? {
         didSet {
-            region = Region(context: moc)
-            type = Region(context: moc).type
+            loadDetails()
         }
     }
     
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadDetails()
+        self.title = selectedRegion?.name ?? "French Wine Basics"
+        tableView.separatorStyle = .none
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return regionTypes.count
+        
+        if regionTypes.count > 0 {
+            return regionTypes.count
+        }
+        return 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var varieties = [Variety]()
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailTableViewCell
-
-        let typeRegion = regionTypes[indexPath.row]
-        cell.configureCell(typeRegion: typeRegion)
-
+//        varieties = WineService.getVarieties(wineRegion: Region, moc: NSManagedObjectContext)
+        cell.configureCell(region: regionTypes[indexPath.row], varieties: varieties)
+        
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - Private
     
     private func loadDetails() {
         guard
-            let region = region,
-            let regionType = type
+            let selectedRegion = selectedRegion
             else {return}
-        regionTypes = region.getRegionsByType(type: regionType, moc: moc)
+        regionTypes = WineService.getTypesOfRegion(moc: coreData.persistentContainer.viewContext, region: selectedRegion)
     }
+    
 
 }

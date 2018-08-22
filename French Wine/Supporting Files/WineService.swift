@@ -13,7 +13,7 @@ class WineService {
     static func getAllRegions(moc: NSManagedObjectContext) -> [Region] {
         
         var regions = [Region]()
-        let request: NSFetchRequest = Region.fetchRequest()
+        let request: NSFetchRequest<Region> = Region.fetchRequest()
         let nameSort = NSSortDescriptor(key: "name", ascending: true)
         
         request.sortDescriptors = [nameSort]
@@ -32,7 +32,7 @@ class WineService {
         var regions = [Region]()
         var uniqueRegions = [Region]()
         var uniqueRegionNames = [String]()
-        let request: NSFetchRequest = Region.fetchRequest()
+        let request: NSFetchRequest<Region> = Region.fetchRequest()
         let nameSort = NSSortDescriptor(key: "name", ascending: true)
         
         request.sortDescriptors = [nameSort]
@@ -53,25 +53,23 @@ class WineService {
         return uniqueRegions
     }
     
-    static func getTypesOfRegion(type: String, moc: NSManagedObjectContext) -> NSFetchedResultsController<Region> {
+    // Return wines with all types (red, white, rose, sparkling) in the selected region
+    static func getTypesOfRegion(moc: NSManagedObjectContext, region: Region) -> [Region] {
         
-        let fetchedResultsController: NSFetchedResultsController<Region>
-        let request: NSFetchRequest = Region.fetchRequest()
+        var regions = [Region]()
+        let request: NSFetchRequest<Region> = Region.fetchRequest()
         let nameSort = NSSortDescriptor(key: "name", ascending: true)
+        let predicate = NSPredicate(format: "name = %@", region.name!)
         
         request.sortDescriptors = [nameSort]
-        //        request.returnsDistinctResults
-        
-        let predicate = NSPredicate(format: "type contains[c]", type)
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        request.predicate = predicate
         
         do {
-            try fetchedResultsController.performFetch()
+            regions = try moc.fetch(request)
         } catch  {
             fatalError("Error fetching data")
         }
         
-        return fetchedResultsController
+        return regions
     }
 }

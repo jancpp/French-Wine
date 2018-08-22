@@ -23,9 +23,45 @@
                 },
                 {
                     "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
+                },
+                {
+                    "name": "Muscat"
                 }
             ],
-            "summary": ""
+            "summary": "In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code."
         },
         {
             "id": "white bordeaux",
@@ -46,7 +82,7 @@
                     "name": "Muscadelle"
                 }
             ],
-            "summary": "usually dry, mineral"
+            "summary": "Usually dry, mineral"
         },
         {
             "id": "red bordeaux",
@@ -67,7 +103,7 @@
                     "name": "Cabernet sauvignon"
                 }
             ],
-            "summary": ""
+            "summary": "Usually dry, full bodied"
         },
         {
             "id": "white burgundy",
@@ -82,7 +118,7 @@
                     "name": "Chardonnay"
                 }
             ],
-            "summary": ""
+            "summary": "Usually dry, crisp"
         },
         {
             "id": "red burgundy",
@@ -100,7 +136,7 @@
                     "name": "Gamay"
                 }
             ],
-            "summary": ""
+            "summary": "Usually light, earthy"
         },
         {
             "id": "champagne",
@@ -118,7 +154,7 @@
                     "name": "Pinot noir"
                 }
             ],
-            "summary": ""
+            "summary": "Usually dry, and crisp"
         },
         {
             "id": "white loire",
@@ -139,7 +175,7 @@
                     "name": "Melon de Bourgogne"
                 }
             ],
-            "summary": ""
+            "summary": "Usually dry, mineral"
         },
         {
             "id": "red loire",
@@ -154,7 +190,7 @@
                     "name": "Cabernet franc"
                 }
             ],
-            "summary": ""
+            "summary": "Usually dry, medium bodied, spicy"
         }
     ]
 }

@@ -29,7 +29,7 @@ class RegionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadData()
+        loadRegions()
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,20 +58,20 @@ class RegionTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {return}
         
-//        if identifier == "Show Detail" {
-//            let destination = segue.destination as! DetailTableViewController
-//
-//            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-//                let selectedRegion = regions[selectedIndexPath.row]
-//                destination.region = selectedRegion
-//                destination.moc = managedObjectContext
-//            }
-//        }
+        if identifier == "Show Detail" {
+            let destination = segue.destination as! DetailTableViewController
+
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                let selectedRegion = regions[selectedIndexPath.row]
+                destination.selectedRegion = selectedRegion
+                destination.managedObjectContext = managedObjectContext
+            }
+        }
     }
 
     // MARK: - private
     
-    private func loadData() {
+    private func loadRegions() {
         regions = WineService.getUniqueRegionNames(moc: coreData.persistentContainer.viewContext)
     }
 }
