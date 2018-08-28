@@ -21,16 +21,6 @@ class DetailTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-//    private lazy var varieties = [Variety]()
-//    var selectedRegion: Region?
-//    private var variety: Variety?
-//
-//    weak var managedObjectContext: NSManagedObjectContext! {
-//        didSet {
-//            variety = Variety(context: managedObjectContext)
-//        }
-//    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -42,12 +32,21 @@ class DetailTableViewCell: UITableViewCell {
     func configureCell(region: Region, varieties: [Variety]) {
         
         typeLabel.text = region.type?.localizedUppercase
-        summaryTextView.text = region.summary
+        typeLabel.font = UIFont.boldSystemFont(ofSize: typeLabel.font.pointSize)
+        
+        var summaryStr: String = "Summary:\n"
+        summaryTextView.textContainer.maximumNumberOfLines = 10
+        summaryTextView.textContainer.lineBreakMode = .byTruncatingTail
+        if let summary = region.summary {
+            summaryStr.append(summary)
+            summaryTextView.text = summaryStr
+        }
+        adjustTextViewHeight(textView : summaryTextView)
         
         var varieties = [Variety]()
         varieties = region.varieties?.allObjects as! [Variety]
-        var varietiesStr: String = "Varieties: "
-        // Append avrieties, seperated by comma
+        var varietiesStr: String = "Varieties:\n"
+        // Append varieties, seperated by comma
         if varieties.count > 0 {
             for variety in varieties.prefix(varieties.count - 1) {
                 varietiesStr.append("\(variety.name ?? ""), ")
@@ -55,5 +54,13 @@ class DetailTableViewCell: UITableViewCell {
             varietiesStr.append("\(varieties[varieties.count - 1].name ?? "")")
         }
         varietiesTextView.text = varietiesStr
+        adjustTextViewHeight(textView : varietiesTextView)
+    }
+    
+    func adjustTextViewHeight(textView : UITextView)
+    {
+//        textView.translatesAutoresizingMaskIntoConstraints = true
+        textView.sizeToFit()
+        textView.isScrollEnabled = false
     }
 }

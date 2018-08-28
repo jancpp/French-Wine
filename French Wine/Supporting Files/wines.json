@@ -23,45 +23,9 @@
                 },
                 {
                     "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
-                },
-                {
-                    "name": "Muscat"
                 }
             ],
-            "summary": "In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code. In this blog post I am going to share with you how to create and customize UITextView. We will learn how to create UITextView using Xcode Interface Designer as well as how to create and customize UITextView programatically in our Swift code."
+            "summary": "Various styles of winemaking. Pinot gris and Gewurztraminers are usually the sweeter/fruitier ones, Rieslings sweet and citrusy, Muscats are suprizingly dry, Pinot Blancs dry or fruity."
         },
         {
             "id": "white bordeaux",
@@ -82,7 +46,7 @@
                     "name": "Muscadelle"
                 }
             ],
-            "summary": "Usually dry, mineral"
+            "summary": "Usually dry and mineral. White Bordeaux wines are Sauvigon blanc blends and come from Entre-deux-Mers region."
         },
         {
             "id": "red bordeaux",
@@ -103,7 +67,28 @@
                     "name": "Cabernet sauvignon"
                 }
             ],
-            "summary": "Usually dry, full bodied"
+            "summary": "Usually dry and medium/full bodied. Bordeaux wines are Merlot blends. The wines from the Left Bank are usually blended with Cabernet Sauvignon which makes then fuller. From the Right Bank, the blending wine is usually Cabernet Franc, which makes them more medium bodied."
+        },
+        {
+            "id": "dessert bordeaux",
+            "region": [
+                {
+                    "name": "Bordeaux"
+                }
+            ],
+            "type": "dessert",
+            "varieties": [
+                {
+                    "name": "Sémillon"
+                },
+                {
+                    "name": "Sauvignon blanc"
+                },
+                {
+                    "name": "Muscadelle"
+                }
+            ],
+            "summary": "Very sweet full bodied. Dessert wines are usually Sémillon blends from Sauternes region."
         },
         {
             "id": "white burgundy",
@@ -118,7 +103,7 @@
                     "name": "Chardonnay"
                 }
             ],
-            "summary": "Usually dry, crisp"
+            "summary": "Usually dry and crisp, sometimes lightly oaked."
         },
         {
             "id": "red burgundy",
@@ -136,7 +121,7 @@
                     "name": "Gamay"
                 }
             ],
-            "summary": "Usually light, earthy"
+            "summary": "Usually light and earthy."
         },
         {
             "id": "champagne",
@@ -154,7 +139,7 @@
                     "name": "Pinot noir"
                 }
             ],
-            "summary": "Usually dry, and crisp"
+            "summary": "Usually dry and crisp (brut), sometimes semi-sweet (demi-sec) or sweet (doux)."
         },
         {
             "id": "white loire",
@@ -175,22 +160,187 @@
                     "name": "Melon de Bourgogne"
                 }
             ],
-            "summary": "Usually dry, mineral"
+            "summary": "Wines are usually dry and mineral, unless they come from Vouray region (Chenin blanc), where are made sweeter/fruitier."
         },
         {
-            "id": "red loire",
+            "id": "white languedoc-roussillon",
             "region": [
                 {
-                    "name": "Loire"
+                    "name": "Languedoc-Roussillon"
+                }
+            ],
+            "type": "white",
+            "varieties": [
+                {
+                    "name": "Grenache blanc"
+                },
+                {
+                    "name": "Roussanne"
+                },
+                {
+                    "name": "Marsanne"
+                },
+                {
+                    "name": "Chardonnay"
+                },
+                {
+                    "name": "Sauvignon Blanc"
+                }
+            ],
+            "summary": "Usually dry, medium/full bodied. Wines made with Viognier can be fruitier."
+        },
+        {
+            "id": "red languedoc-roussillon",
+            "region": [
+                {
+                    "name": "Languedoc-Roussillon"
                 }
             ],
             "type": "red",
             "varieties": [
                 {
-                    "name": "Cabernet franc"
+                    "name": "Grenache"
+                },
+                {
+                    "name": "Syrah"
+                },
+                {
+                    "name": "Carignan"
+                },
+                {
+                    "name": "Mourvèdre"
+                },
+                {
+                    "name": "Cinsault"
                 }
             ],
-            "summary": "Usually dry, medium bodied, spicy"
+            "summary": "Usually dry, medium/full bodied, mostly Grenache/Syrah blends."
+        },
+        {
+            "id": "white provence",
+            "region": [
+                {
+                    "name": "Provence"
+                }
+            ],
+            "type": "white",
+            "varieties": [
+                {
+                    "name": "Grenache blanc"
+                },
+                {
+                    "name": "Bourboulenc"
+                },
+                {
+                    "name": "Marsanne"
+                },
+                {
+                    "name": "Viognier"
+                }
+            ],
+            "summary": "Usually dry, medium/full bodied. Wines made with Viognier can be fruitier."
+        },
+        {
+            "id": "red provence",
+            "region": [
+                {
+                    "name": "Provence"
+                }
+            ],
+            "type": "red",
+            "varieties": [
+                {
+                    "name": "Mourvèdre"
+                },
+                {
+                    "name": "Syrah"
+                },
+                {
+                    "name": "Grenache"
+                },
+                {
+                    "name": "Cinsault"
+                }
+            ],
+            "summary": "Usually dry, medium/full bodied. Presence of Mourvèdre make wine taste fuller/bigger and darker in color."
+        },
+        {
+            "id": "rosé provence",
+            "region": [
+                {
+                    "name": "Provence"
+                }
+            ],
+            "type": "rosé",
+            "varieties": [
+                {
+                    "name": "Mourvèdre"
+                },
+                {
+                    "name": "Syrah"
+                },
+                {
+                    "name": "Grenache"
+                },
+                {
+                    "name": "Cinsault"
+                }
+            ],
+            "summary": "Usually dry and crisp, medium/full bodied."
+        },
+        {
+            "id": "white rhone",
+            "region": [
+                {
+                    "name": "Rhône valley"
+                }
+            ],
+            "type": "white",
+            "varieties": [
+                {
+                    "name": "Grenache blanc"
+                },
+                {
+                    "name": "Roussanne"
+                },
+                {
+                    "name": "Marsanne"
+                },
+                {
+                    "name": "Ugni blanc"
+                },
+                {
+                    "name": "Viognier"
+                }
+            ],
+            "summary": "Usually dry, medium bodied. Viogniers can be fruity."
+        },
+        {
+            "id": "red rhone",
+            "region": [
+                {
+                    "name": "Rhône valley"
+                }
+            ],
+            "type": "red",
+            "varieties": [
+                {
+                    "name": "Grenache"
+                },
+                {
+                    "name": "Syrah"
+                },
+                {
+                    "name": "Carignan"
+                },
+                {
+                    "name": "Mourvèdre"
+                },
+                {
+                    "name": "Cinsault"
+                }
+            ],
+            "summary": "Usually dry, medium/full bodied, spicy and peppery. The wine from the north is dominantly made from syrah, wine from the rest of the region are usualy Grenache blends."
         }
     ]
 }

@@ -14,8 +14,8 @@ class WineService {
         
         var regions = [Region]()
         let request: NSFetchRequest<Region> = Region.fetchRequest()
-        let nameSort = NSSortDescriptor(key: "name", ascending: true)
         
+        let nameSort = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [nameSort]
         
         do {
@@ -33,8 +33,8 @@ class WineService {
         var uniqueRegions = [Region]()
         var uniqueRegionNames = [String]()
         let request: NSFetchRequest<Region> = Region.fetchRequest()
-        let nameSort = NSSortDescriptor(key: "name", ascending: true)
         
+        let nameSort = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [nameSort]
         
         do {
@@ -49,7 +49,7 @@ class WineService {
                 uniqueRegions.append(region)
             }
         }
-        
+
         return uniqueRegions
     }
     
@@ -58,10 +58,10 @@ class WineService {
         
         var regions = [Region]()
         let request: NSFetchRequest<Region> = Region.fetchRequest()
-        let nameSort = NSSortDescriptor(key: "name", ascending: true)
+//        let nameSort = NSSortDescriptor(key: "name", ascending: true)
         let predicate = NSPredicate(format: "name = %@", region.name!)
         
-        request.sortDescriptors = [nameSort]
+//        request.sortDescriptors = [nameSort]
         request.predicate = predicate
         
         do {

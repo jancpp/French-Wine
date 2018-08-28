@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class RegionTableViewController: UITableViewController {
+class RegionTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
     private var coreData = CoreDataStack()
     
@@ -30,6 +30,23 @@ class RegionTableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadRegions()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    override func awakeFromNib() {
+        splitViewController?.delegate = self
+    }
+    
+    func splitViewController(
+        _ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController: UIViewController,
+        onto primaryViewController: UIViewController) -> Bool {
+        if let detailVC = secondaryViewController as? DetailTableViewController {
+            if detailVC.selectedRegion == nil {
+                return true
+            }
+        }
+        return false
     }
 
     override func didReceiveMemoryWarning() {

@@ -53,51 +53,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func uploadSampleData() {
         let moc = coreData.persistentContainer.viewContext
         
-        if let url = Bundle.main.url(forResource: "wines", withExtension: "json"),
-            let data = try? Data(contentsOf: url) {
-            if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? NSDictionary,
-                let jsonArray = jsonResult?.value(forKey: "wines") as? NSArray {
-                for json in jsonArray {
-                    if let regionData = json as? [String: AnyObject] {
-                        guard
-                            let summary = regionData["summary"] as? String,
-                            let type = regionData["type"] as? String
-                            else {return}
-                        
-                        let region = Region(context: moc)
-                        
-                        region.summary = summary
-                        region.type = type
-                        
-                        if let regionNames = regionData["region"] as? NSArray {
-                            for regionName in regionNames {
-                                if let nameData = regionName as? [String: AnyObject] {
-                                    if let name = nameData["name"] as? String {
-                                        region.name = name
-                                    }
-                                }
-                            }
-                        }
-                        
-                        if let regionVarieties = regionData["varieties"] as? NSArray {
-                            let regionVarietyData = region.varieties?.mutableCopy() as! NSMutableSet
+//        DispatchQueue.global(qos: .background).async { [weak self] in
+        
+            if let url = Bundle.main.url(forResource: "wines", withExtension: "json"),
+                let data = try? Data(contentsOf: url) {
+                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? NSDictionary,
+                    let jsonArray = jsonResult?.value(forKey: "wines") as? NSArray {
+                    for json in jsonArray {
+                        if let regionData = json as? [String: AnyObject] {
+                            guard
+                                let summary = regionData["summary"] as? String,
+                                let type = regionData["type"] as? String
+                                else {return}
                             
-                            for regionVariety in regionVarieties {
-                                if let varietyData = regionVariety as? [String: AnyObject] {
-                                    
-                                    let variety = Variety(context: moc)
-                                    
-                                    if let name = varietyData["name"] as? String {
-                                        variety.name = name
+                            let region = Region(context: moc)
+                            
+                            region.summary = summary
+                            region.type = type
+                            
+                            if let regionNames = regionData["region"] as? NSArray {
+                                for regionName in regionNames {
+                                    if let nameData = regionName as? [String: AnyObject] {
+                                        if let name = nameData["name"] as? String {
+                                            region.name = name
+                                        }
                                     }
-                                    regionVarietyData.add(variety)
                                 }
                             }
-                            region.addToVarieties(regionVarietyData.copy() as! NSSet)
+                            
+                            if let regionVarieties = regionData["varieties"] as? NSArray {
+                                let regionVarietyData = region.varieties?.mutableCopy() as! NSMutableSet
+                                
+                                for regionVariety in regionVarieties {
+                                    if let varietyData = regionVariety as? [String: AnyObject] {
+                                        
+                                        let variety = Variety(context: moc)
+                                        
+                                        if let name = varietyData["name"] as? String {
+                                            variety.name = name
+                                        }
+                                        regionVarietyData.add(variety)
+                                    }
+                                }
+                                region.addToVarieties(regionVarietyData.copy() as! NSSet)
+                            }
                         }
                     }
-                }
-                coreData.saveContext()
+                    coreData.saveContext()
+//                  self?.coreData.saveContext()
+//                }
             }
         }
     }

@@ -29,8 +29,13 @@ class DetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = selectedRegion?.name ?? "French Wine Basics"
+        self.title = selectedRegion?.name ?? "French Wine"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,9 +54,8 @@ class DetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var varieties = [Variety]()
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailTableViewCell
-//        varieties = WineService.getVarieties(wineRegion: Region, moc: NSManagedObjectContext)
+        
         cell.configureCell(region: regionTypes[indexPath.row], varieties: varieties)
         
         return cell
