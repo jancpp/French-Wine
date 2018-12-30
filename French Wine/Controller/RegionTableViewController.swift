@@ -75,13 +75,20 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {return}
         
-        if identifier == "Show Detail" {
-            let destination = segue.destination as! DetailTableViewController
-
+        if identifier == "Show detail" {
+            
+//            var tabBarController = segue.destination as UITabBarController
+//            var destinationViewController = tabBarController.viewControllers[0] as YourViewController // or whatever tab index you're trying to access
+//            destination.property = "some value"
+            
+            
+            let tabBarController = segue.destination as! UITabBarController
+            let destinationVC = tabBarController.viewControllers?[0] as! DetailTableViewController
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 let selectedRegion = regions[selectedIndexPath.row]
-                destination.selectedRegion = selectedRegion
-                destination.managedObjectContext = managedObjectContext
+                destinationVC.selectedRegion = selectedRegion
+                destinationVC.managedObjectContext = managedObjectContext
+                
             }
         }
     }

@@ -1,5 +1,5 @@
 //
-//  Region+CoreDataClass.swift
+//  Note+CoreDataClass.swift
 //  French Wine
 //
 //  Created by Jan Polzer on 12/25/18.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-
-public class Region: NSManagedObject {
+@objc(Note)
+public class Note: NSManagedObject {
 
 }

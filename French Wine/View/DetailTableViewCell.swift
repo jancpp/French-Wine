@@ -59,7 +59,6 @@ class DetailTableViewCell: UITableViewCell {
     
     func adjustTextViewHeight(textView : UITextView)
     {
-//        textView.translatesAutoresizingMaskIntoConstraints = true
         textView.sizeToFit()
         textView.isScrollEnabled = false
     }

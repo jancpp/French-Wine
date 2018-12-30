@@ -12,7 +12,8 @@ import CoreData
 class DetailTableViewController: UITableViewController {
 
     private var coreData = CoreDataStack()
-    
+    @IBAction func wikiButton(_ sender: Any) {
+    }
     // MARK: - Properties
     
     private lazy var regionTypes = [Region]()
@@ -69,6 +70,4 @@ class DetailTableViewController: UITableViewController {
             else {return}
         regionTypes = WineService.getTypesOfRegion(moc: coreData.persistentContainer.viewContext, region: selectedRegion)
     }
-    
-
 }

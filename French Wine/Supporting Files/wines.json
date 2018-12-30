@@ -67,7 +67,7 @@
                     "name": "Cabernet sauvignon"
                 }
             ],
-            "summary": "Usually dry and medium/full bodied. Bordeaux wines are Merlot blends. The wines from the Left Bank are usually blended with Cabernet Sauvignon which makes then fuller. From the Right Bank, the blending wine is usually Cabernet Franc, which makes them more medium bodied."
+            "summary": "Usually dry and medium/full bodied. Bordeaux wines are Merlot blends. The wines from the Left Bank (regions Médoc, Saint-Estèphe, Pauillac, Saint-Julien, Margaux) are usually blended with Cabernet Sauvignon which makes then fuller. From the Right Bank (regions Saint-Émilion, Pomerol, Bordeaux Supérieur), the blending wine is usually Cabernet Franc, which makes them more medium bodied."
         },
         {
             "id": "dessert bordeaux",
@@ -121,7 +121,7 @@
                     "name": "Gamay"
                 }
             ],
-            "summary": "Usually light and earthy."
+            "summary": "Usually light and earthy. Wines from Beaujolais region are made with Gamay, others usually with Pinot Noir."
         },
         {
             "id": "champagne",
@@ -145,7 +145,7 @@
             "id": "white loire",
             "region": [
                 {
-                    "name": "Loire"
+                    "name": "Loire valley"
                 }
             ],
             "type": "white",
@@ -160,7 +160,22 @@
                     "name": "Melon de Bourgogne"
                 }
             ],
-            "summary": "Wines are usually dry and mineral, unless they come from Vouray region (Chenin blanc), where are made sweeter/fruitier."
+            "summary": "Wines are usually dry and mineral (regions Sancerre, Muscadet), unless they come from Vouvray region (Chenin blanc), where are made sweeter/fruitier."
+        },
+        {
+            "id": "red loire",
+            "region": [
+                {
+                    "name": "Loire valley"
+                }
+            ],
+            "type": "red",
+            "varieties": [
+                {
+                    "name": "Cabernet franc"
+                }
+            ],
+            "summary": "Usually light, spicy, peppery and earthy."
         },
         {
             "id": "white languedoc-roussillon",
@@ -214,7 +229,7 @@
                     "name": "Cinsault"
                 }
             ],
-            "summary": "Usually dry, medium/full bodied, mostly Grenache/Syrah blends."
+            "summary": "Usually dry, medium/full bodied, Grenache/Syrah blends."
         },
         {
             "id": "white provence",
@@ -262,7 +277,7 @@
                     "name": "Cinsault"
                 }
             ],
-            "summary": "Usually dry, medium/full bodied. Presence of Mourvèdre make wine taste fuller/bigger and darker in color."
+            "summary": "Usually dry, medium/full bodied. Presence of Mourvèdre makes wine taste fuller/bigger and darker in color."
         },
         {
             "id": "rosé provence",
@@ -340,7 +355,7 @@
                     "name": "Cinsault"
                 }
             ],
-            "summary": "Usually dry, medium/full bodied, spicy and peppery. The wine from the north is dominantly made from syrah, wine from the rest of the region are usualy Grenache blends."
+            "summary": "Usually dry, medium/full bodied, spicy and peppery. The wines from the north are made dominantly with syrah grapes, wine from the rest of the region are usualy Grenache blends."
         }
     ]
 }
