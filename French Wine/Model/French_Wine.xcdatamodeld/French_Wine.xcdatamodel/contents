@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14308.2" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="notes" inverseEntity="Region" syncable="YES"/>
+    </entity>
     <entity name="Region" representedClassName=".Region" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="region" inverseEntity="Note" syncable="YES"/>
         <relationship name="varieties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Variety" inverseName="region" inverseEntity="Variety" syncable="YES"/>
     </entity>
     <entity name="Variety" representedClassName=".Variety" syncable="YES">
@@ -11,7 +16,8 @@
         <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="varieties" inverseEntity="Region" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Region" positionX="-890.10546875" positionY="-266.74609375" width="128" height="105"/>
-        <element name="Variety" positionX="-608.9765625" positionY="-235.27734375" width="128" height="75"/>
+        <element name="Region" positionX="-890.10546875" positionY="-266.74609375" width="128" height="118"/>
+        <element name="Variety" positionX="-582.8203125" positionY="95.296875" width="128" height="73"/>
+        <element name="Note" positionX="-572.37890625" positionY="-405.2578125" width="128" height="73"/>
     </elements>
 </model>
