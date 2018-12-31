@@ -124,12 +124,56 @@
                             <outlet property="delegate" destination="tsY-UX-vOM" id="dXW-Ez-ISU"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="MG4-sy-8rk"/>
+                    <tabBarItem key="tabBarItem" title="Info" id="MG4-sy-8rk"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="p2B-mW-e6i"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmO-xW-MLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336.231884057971" y="300.66964285714283"/>
+            <point key="canvasLocation" x="2651" y="-623"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="mYE-WP-7Ms">
+            <objects>
+                <viewController id="m3q-Df-Cqx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hum-b4-ZmN">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-TD-b2z" userLabel="Spinner">
+                                <rect key="frame" x="502" y="384" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZXb-TD-b2z" firstAttribute="centerX" secondItem="1R0-WJ-wWB" secondAttribute="centerX" id="3Q4-7W-Ebe"/>
+                            <constraint firstItem="ZXb-TD-b2z" firstAttribute="centerY" secondItem="1R0-WJ-wWB" secondAttribute="centerY" id="XmZ-mE-bZI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1R0-WJ-wWB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="EUA-2D-dtj"/>
+                    <connections>
+                        <outlet property="spinner" destination="ZXb-TD-b2z" id="sZb-9c-qZ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Flw-Qr-PzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="709"/>
+        </scene>
+        <!--Wikipedia-->
+        <scene sceneID="xih-AB-nEz">
+            <objects>
+                <viewController id="KOv-U5-xXa" customClass="WikiViewController" customModule="French_Wine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cyL-7D-gu2">
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dVs-GF-eo9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wikipedia" id="xxi-Cm-7C5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4f-6Q-aoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2663" y="61"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="CwJ-kh-L6p">
@@ -169,22 +213,24 @@
             </objects>
             <point key="canvasLocation" x="1096.467391304348" y="-623.1884057971015"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Base Tab Bar Controller-->
         <scene sceneID="X6a-Od-SAf">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0cs-nY-9Aj" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0cs-nY-9Aj" customClass="BaseTabBarController" customModule="French_Wine" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhJ-hy-W4K">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="tsY-UX-vOM" kind="relationship" relationship="viewControllers" id="gjB-Fh-X8Z"/>
+                        <segue destination="KOv-U5-xXa" kind="relationship" relationship="viewControllers" id="Sfk-rD-5Qi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4f-4c-XHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426.0869565217392" y="300.66964285714283"/>
+            <point key="canvasLocation" x="1869" y="130"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

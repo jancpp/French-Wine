@@ -72,4 +72,45 @@ class WineService {
         
         return regions
     }
+    
+    static func getUrl(region: Region) -> String {
+        
+        var url = "https://en.wikipedia.org/wiki/French_wine"
+        let regionName = region.name
+        
+        switch regionName {
+        case "Alsace":
+            url = "https://en.wikipedia.org/wiki/Alsace_wine"
+        case "Bordeaux":
+            url = "https://en.wikipedia.org/wiki/Bordeaux_wine"
+        case "Burgundy":
+            url = "https://en.wikipedia.org/wiki/Burgundy_wine"
+        case "Champagne":
+            url = "https://en.wikipedia.org/wiki/Champagne_(wine_region)"
+        case "Languedoc-Roussillon":
+            url = "https://en.wikipedia.org/wiki/Languedoc-Roussillon_wine"
+        case "Loire":
+            url = "https://en.wikipedia.org/wiki/Loire_Valley_(wine)"
+        case "Provence":
+            url = "https://en.wikipedia.org/wiki/Provence_wine"
+        case "Rhone":
+            url = "https://en.wikipedia.org/wiki/Rh%C3%B4ne_wine"
+            
+        default:
+            url = "https://en.wikipedia.org/wiki/Rh%C3%B4ne_wine"
+        }
+
+        return url
+    }
+    
+    // MARK: - Private
+    
+    private func encodedUrl(from string: String) -> URL? {
+        // Remove preexisting encoding
+        guard let decodedString = string.removingPercentEncoding,
+            // Reencode, to revert decoding while encoding missed characters
+            let percentEncodedString = decodedString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return nil}
+        // Create URL from encoded string, or nil if failed
+        return URL(string: percentEncodedString)
+    }
 }

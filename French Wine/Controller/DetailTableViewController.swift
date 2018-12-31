@@ -12,8 +12,7 @@ import CoreData
 class DetailTableViewController: UITableViewController {
 
     private var coreData = CoreDataStack()
-    @IBAction func wikiButton(_ sender: Any) {
-    }
+   
     // MARK: - Properties
     
     private lazy var regionTypes = [Region]()
