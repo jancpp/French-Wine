@@ -11,7 +11,6 @@ import SafariServices
 
 class MapViewController: UIViewController, UIWebViewDelegate {
     
-    //    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var selectedRegion: Region?
     var mapUrl: String?
     
@@ -28,13 +27,13 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         super.viewWillAppear(animated)
         
         loadData()
-        showImage(mapUrl: mapUrl ?? "https://upload.wikimedia.org/wikipedia/commons/2/29/Cartes_des_vins_de_france.png")
+        showMap(mapUrl: mapUrl ?? "https://upload.wikimedia.org/wikipedia/commons/2/29/Cartes_des_vins_de_france.png")
         
     }
     
     // MARK: - Private
     
-    private func showImage(mapUrl: String) {
+    private func showMap(mapUrl: String) {
         guard
             let mapUrl = URL(string: mapUrl)
             else {return}
@@ -50,7 +49,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
                 let selectedRegion = tabBar.selectedRegion
                 else {return}
             
-            mapUrl = WineService.getImageUrl(region: selectedRegion)
+            mapUrl = WineService.getMapUrl(region: selectedRegion)
         }
     }
 }

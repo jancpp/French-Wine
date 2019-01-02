@@ -138,6 +138,7 @@
                     <view key="view" contentMode="scaleToFill" id="hum-b4-ZmN">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1R0-WJ-wWB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="EUA-2D-dtj"/>
@@ -146,6 +147,54 @@
             </objects>
             <point key="canvasLocation" x="2663" y="863"/>
         </scene>
+        <!--Notes-->
+        <scene sceneID="A9b-Cs-N42">
+            <objects>
+                <tableViewController id="iQN-Ic-TvF" customClass="NotesTableViewController" customModule="French_Wine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fnk-Uu-OGP">
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" id="ycy-2s-Yrk" customClass="NoteTableViewCell" customModule="French_Wine" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="703.5" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ycy-2s-Yrk" id="1gq-ts-dAX">
+                                    <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl6-gn-n48">
+                                            <rect key="frame" x="20" y="11" width="663.5" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21.5" id="KSh-qb-iAz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xl6-gn-n48" secondAttribute="trailing" id="PUe-WU-2mP"/>
+                                        <constraint firstItem="xl6-gn-n48" firstAttribute="leading" secondItem="1gq-ts-dAX" secondAttribute="leadingMargin" id="kqy-5o-v1I"/>
+                                        <constraint firstItem="xl6-gn-n48" firstAttribute="top" secondItem="1gq-ts-dAX" secondAttribute="topMargin" id="zct-9K-lk3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="noteLabel" destination="xl6-gn-n48" id="9kb-Wi-rey"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iQN-Ic-TvF" id="HWO-og-B55"/>
+                            <outlet property="delegate" destination="iQN-Ic-TvF" id="4Ik-GW-Cd8"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Notes" id="dGu-qh-4pp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEp-zT-QMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2671" y="1666"/>
+        </scene>
         <!--Wikipedia-->
         <scene sceneID="xih-AB-nEz">
             <objects>
@@ -153,6 +202,7 @@
                     <view key="view" contentMode="scaleToFill" id="cyL-7D-gu2">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dVs-GF-eo9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Wikipedia" id="xxi-Cm-7C5"/>
@@ -213,6 +263,7 @@
                         <segue destination="tsY-UX-vOM" kind="relationship" relationship="viewControllers" id="gjB-Fh-X8Z"/>
                         <segue destination="KOv-U5-xXa" kind="relationship" relationship="viewControllers" id="Sfk-rD-5Qi"/>
                         <segue destination="m3q-Df-Cqx" kind="relationship" relationship="viewControllers" id="gea-7e-Rb9"/>
+                        <segue destination="iQN-Ic-TvF" kind="relationship" relationship="viewControllers" id="4uI-ae-HvE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4f-4c-XHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,6 +272,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6hS-v1-84S"/>
+        <segue reference="pEC-wf-rfa"/>
     </inferredMetricsTieBreakers>
 </document>

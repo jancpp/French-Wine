@@ -61,10 +61,8 @@ class WineService {
         
         var regions = [Region]()
         let request: NSFetchRequest<Region> = Region.fetchRequest()
-//        let nameSort = NSSortDescriptor(key: "name", ascending: true)
         let predicate = NSPredicate(format: "name = %@", region.name!)
         
-//        request.sortDescriptors = [nameSort]
         request.predicate = predicate
         
         do {
@@ -108,7 +106,7 @@ class WineService {
     }
     
     // returns url string for specified region
-    static func getImageUrl(region: Region) -> String {
+    static func getMapUrl(region: Region) -> String {
         
         var url = "https://upload.wikimedia.org/wikipedia/commons/2/29/Cartes_des_vins_de_france.png"
         let regionName = region.name
@@ -135,5 +133,24 @@ class WineService {
         }
         
         return url
+    }
+    
+    // MARK: - Notes
+    
+    // READ
+    static func getNotes(moc: NSManagedObjectContext, region: Region) -> [Note]? {
+        
+        var notes: [Note]
+        let request: NSFetchRequest<Note> = Note.fetchRequest()
+        
+        do {
+            notes = try moc.fetch(request)
+            return notes
+        }
+        catch let error as NSError {
+            print("Error fetching notes: \(error.localizedDescription)")
+        }
+        
+        return nil
     }
 }

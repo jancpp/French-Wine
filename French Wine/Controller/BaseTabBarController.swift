@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+class BaseTabBarController: UITabBarController  {
 
     // MARK: - Properties
     
@@ -16,9 +16,7 @@ class BaseTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let selectedRegion = selectedRegion {
-            print(selectedRegion.name ?? "None")
-        }
-    }
-
+    }    
 }
+
+

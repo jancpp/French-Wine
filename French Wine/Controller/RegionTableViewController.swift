@@ -11,10 +11,10 @@ import CoreData
 
 class RegionTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
-    private var coreData = CoreDataStack()
     
     // MARK: - Properties
     
+    private var coreData = CoreDataStack()
     weak var managedObjectContext: NSManagedObjectContext! {
         didSet {
             return region = Region(context: managedObjectContext)
@@ -74,6 +74,7 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
                 let selectedRegion = regions[selectedIndexPath.row]
                 tabBarController.selectedRegion = selectedRegion
                 destinationController.selectedRegion = selectedRegion     // detailVC
+                destinationController.title = selectedRegion.name
             }
         }
     }

@@ -11,6 +11,7 @@ import UIKit
 class RegionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var regionNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
