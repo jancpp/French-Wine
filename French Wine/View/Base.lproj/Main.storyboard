@@ -129,35 +129,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmO-xW-MLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2651" y="-623"/>
+            <point key="canvasLocation" x="2663" y="-623"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="mYE-WP-7Ms">
             <objects>
-                <viewController id="m3q-Df-Cqx" sceneMemberID="viewController">
+                <viewController id="m3q-Df-Cqx" customClass="MapViewController" customModule="French_Wine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hum-b4-ZmN">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-TD-b2z" userLabel="Spinner">
-                                <rect key="frame" x="502" y="384" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ZXb-TD-b2z" firstAttribute="centerX" secondItem="1R0-WJ-wWB" secondAttribute="centerX" id="3Q4-7W-Ebe"/>
-                            <constraint firstItem="ZXb-TD-b2z" firstAttribute="centerY" secondItem="1R0-WJ-wWB" secondAttribute="centerY" id="XmZ-mE-bZI"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1R0-WJ-wWB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="EUA-2D-dtj"/>
-                    <connections>
-                        <outlet property="spinner" destination="ZXb-TD-b2z" id="sZb-9c-qZ4"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Map" id="EUA-2D-dtj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flw-Qr-PzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="709"/>
+            <point key="canvasLocation" x="2663" y="863"/>
         </scene>
         <!--Wikipedia-->
         <scene sceneID="xih-AB-nEz">
@@ -166,14 +153,13 @@
                     <view key="view" contentMode="scaleToFill" id="cyL-7D-gu2">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dVs-GF-eo9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Wikipedia" id="xxi-Cm-7C5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4f-6Q-aoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2663" y="61"/>
+            <point key="canvasLocation" x="2663" y="130"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="CwJ-kh-L6p">
@@ -186,7 +172,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AI5-2i-s2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="-213"/>
+            <point key="canvasLocation" x="458" y="-623"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9qb-xD-Emg">
@@ -211,7 +197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8t-Cr-Btf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.467391304348" y="-623.1884057971015"/>
+            <point key="canvasLocation" x="1186" y="-623"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="X6a-Od-SAf">
@@ -226,14 +212,15 @@
                     <connections>
                         <segue destination="tsY-UX-vOM" kind="relationship" relationship="viewControllers" id="gjB-Fh-X8Z"/>
                         <segue destination="KOv-U5-xXa" kind="relationship" relationship="viewControllers" id="Sfk-rD-5Qi"/>
+                        <segue destination="m3q-Df-Cqx" kind="relationship" relationship="viewControllers" id="gea-7e-Rb9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4f-4c-XHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="130"/>
+            <point key="canvasLocation" x="1854" y="333"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pEC-wf-rfa"/>
+        <segue reference="6hS-v1-84S"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 
 class WikiViewController: UIViewController, UIWebViewDelegate {
-
+    
     // MARK: - Properties
     
     var selectedRegion: Region?
@@ -18,23 +18,29 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadDetails()
+    }
+    // MARK: View Controller Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadData()
         showWebsite(url: url ?? "https://en.wikipedia.org/wiki/French_wine")
     }
-    
+
     // MARK: - Private
     
     private func showWebsite(url: String) {
-        guard let url = URL(string: url)
+        guard
+            let url = URL(string: url)
             else {return}
         let webVC = SFSafariViewController(url: url as URL)
-//        webVC.delegate = self
+        webVC.delegate = self
         
         present(webVC, animated: true, completion: nil)
     }
     
-    private func loadDetails() {
+    private func loadData() {
         let tabBar = tabBarController as! BaseTabBarController
         guard
             let selectedRegion = tabBar.selectedRegion
@@ -45,7 +51,11 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
 }
 
 extension WikiViewController: SFSafariViewControllerDelegate {
+    
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        
         controller.dismiss(animated: true, completion: nil)
+        
+        tabBarController?.selectedIndex = 0
     }
 }

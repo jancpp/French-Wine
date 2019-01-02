@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-
 class RegionTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
     private var coreData = CoreDataStack()
@@ -23,12 +22,12 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     }
     private lazy var regions = [Region]()
     private var region: Region?
-
+    
     // MARK: - Initialization
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadRegions()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
@@ -37,31 +36,23 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         splitViewController?.delegate = self
     }
     
-    func splitViewController(
-        _ splitViewController: UISplitViewController,
-        collapseSecondary secondaryViewController: UIViewController,
-        onto primaryViewController: UIViewController) -> Bool {
-        if let detailVC = secondaryViewController as? DetailTableViewController {
-            if detailVC.selectedRegion == nil {
-                return true
-            }
-        }
-        return false
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if regions.count > 0 {
             return regions.count
         }
         return 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "regionCell", for: indexPath) as! RegionTableViewCell
         
@@ -69,7 +60,7 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         
         return cell
     }
-
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,13 +73,11 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
                 let destinationController = tabBarController.viewControllers?[0] as! DetailTableViewController
                 let selectedRegion = regions[selectedIndexPath.row]
                 tabBarController.selectedRegion = selectedRegion
-                destinationController.selectedRegion = selectedRegion
-//                destinationController.managedObjectContext = managedObjectContext
-                
+                destinationController.selectedRegion = selectedRegion     // detailVC
             }
         }
     }
-
+    
     // MARK: - private
     
     private func loadRegions() {
@@ -96,3 +85,12 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     }
 }
 
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? self
+        } else {
+            return self
+        }
+    }
+}

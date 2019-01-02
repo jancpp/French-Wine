@@ -10,15 +10,15 @@ import UIKit
 import CoreData
 
 class DetailTableViewController: UITableViewController {
-
+    
     private var coreData = CoreDataStack()
-   
+    
     // MARK: - Properties
     
     private lazy var regionTypes = [Region]()
     private lazy var varieties = [Variety]()
     weak var managedObjectContext: NSManagedObjectContext!
-
+    
     var selectedRegion: Region? {
         didSet {
             loadDetails()
@@ -29,13 +29,17 @@ class DetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = selectedRegion?.name ?? "French Wine"
+        self.parent?.title = selectedRegion?.name ?? "French Wine"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
+    }
+    
+    override func awakeFromNib() {
+
     }
     
     override func didReceiveMemoryWarning() {
