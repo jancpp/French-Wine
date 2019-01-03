@@ -69,12 +69,16 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         if identifier == "Show detail" {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                let tabBarController = segue.destination as! BaseTabBarController
-                let destinationController = tabBarController.viewControllers?[0] as! DetailTableViewController
                 let selectedRegion = regions[selectedIndexPath.row]
+                
+                let navigationController: UINavigationController! = segue.destination as? UINavigationController
+                
+                let tabBarController: BaseTabBarController! = navigationController.topViewController as? BaseTabBarController
                 tabBarController.selectedRegion = selectedRegion
-                destinationController.selectedRegion = selectedRegion     // detailVC
-                destinationController.title = selectedRegion.name
+
+                let detailVC: DetailTableViewController! = tabBarController.viewControllers?[0] as? DetailTableViewController
+                detailVC.selectedRegion = selectedRegion
+                detailVC.title = selectedRegion.name
             }
         }
     }

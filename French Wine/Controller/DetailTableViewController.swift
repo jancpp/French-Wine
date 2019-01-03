@@ -30,7 +30,7 @@ class DetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.parent?.title = selectedRegion?.name ?? "French Wine"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -39,7 +39,6 @@ class DetailTableViewController: UITableViewController {
     }
     
     override func awakeFromNib() {
-
     }
     
     override func didReceiveMemoryWarning() {
