@@ -13,7 +13,7 @@
         <!--French Wine-->
         <scene sceneID="2Dp-Gh-yJs">
             <objects>
-                <tableViewController modalPresentationStyle="currentContext" clearsSelectionOnViewWillAppear="NO" id="gHl-wW-qLM" customClass="RegionTableViewController" customModule="French_Wine" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="currentContext" id="gHl-wW-qLM" customClass="RegionTableViewController" customModule="French_Wine" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8z7-Or-4Ei">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,16 +155,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="MGD-dn-Uc6">
+                            <rect key="frame" x="0.0" y="0.0" width="703" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Notes" id="tir-2k-kkn">
+                                    <barButtonItem key="rightBarButtonItem" title="Add" id="Mlr-WT-UoZ">
+                                        <connections>
+                                            <action selector="addNoteButton:" destination="iQN-Ic-TvF" id="ajD-c8-3ER"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" id="ycy-2s-Yrk" customClass="NoteTableViewCell" customModule="French_Wine" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="703.5" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="703.5" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ycy-2s-Yrk" id="1gq-ts-dAX">
                                     <rect key="frame" x="0.0" y="0.0" width="703.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl6-gn-n48">
-                                            <rect key="frame" x="20" y="11" width="663.5" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="984" height="21.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21.5" id="KSh-qb-iAz"/>
                                             </constraints>
@@ -193,7 +206,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEp-zT-QMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="983"/>
+            <point key="canvasLocation" x="2663" y="1020"/>
         </scene>
         <!--Wikipedia-->
         <scene sceneID="xih-AB-nEz">
@@ -282,6 +295,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="L6a-Ys-gnk"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eY6-wB-MHq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -289,7 +303,7 @@
                         <segue destination="tsY-UX-vOM" kind="relationship" relationship="viewControllers" id="aqM-za-GEy"/>
                         <segue destination="KOv-U5-xXa" kind="relationship" relationship="viewControllers" id="lkI-3U-7nR"/>
                         <segue destination="m3q-Df-Cqx" kind="relationship" relationship="viewControllers" id="u9s-CC-G1x"/>
-                        <segue destination="iQN-Ic-TvF" kind="relationship" relationship="viewControllers" id="amP-Dd-oWy"/>
+                        <segue destination="iQN-Ic-TvF" kind="relationship" relationship="viewControllers" id="beI-Fr-Cdf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5I-k0-TYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,6 +312,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KBV-OM-U3R"/>
+        <segue reference="zMf-Dm-2n9"/>
     </inferredMetricsTieBreakers>
 </document>

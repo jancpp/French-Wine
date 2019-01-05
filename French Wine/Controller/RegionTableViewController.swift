@@ -11,7 +11,6 @@ import CoreData
 
 class RegionTableViewController: UITableViewController, UISplitViewControllerDelegate {
     
-    
     // MARK: - Properties
     
     private var coreData = CoreDataStack()

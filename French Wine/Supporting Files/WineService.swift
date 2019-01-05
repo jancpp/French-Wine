@@ -135,22 +135,8 @@ class WineService {
         return url
     }
     
-    // MARK: - Notes
     
-    // READ
-    static func getNotes(moc: NSManagedObjectContext, region: Region) -> [Note]? {
-        
-        var notes: [Note]
-        let request: NSFetchRequest<Note> = Note.fetchRequest()
-        
-        do {
-            notes = try moc.fetch(request)
-            return notes
-        }
-        catch let error as NSError {
-            print("Error fetching notes: \(error.localizedDescription)")
-        }
-        
-        return nil
-    }
+    
+   
+    
 }

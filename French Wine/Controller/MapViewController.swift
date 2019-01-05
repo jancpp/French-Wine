@@ -11,7 +11,6 @@ import SafariServices
 
 class MapViewController: UIViewController, UIWebViewDelegate {
     
-    var selectedRegion: Region?
     var mapUrl: String?
     
     override func viewDidLoad() {

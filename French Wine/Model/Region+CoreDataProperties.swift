@@ -2,8 +2,8 @@
 //  Region+CoreDataProperties.swift
 //  French Wine
 //
-//  Created by Jan Polzer on 12/25/18.
-//  Copyright © 2018 Apps KC. All rights reserved.
+//  Created by Jan Polzer on 1/4/19.
+//  Copyright © 2019 Apps KC. All rights reserved.
 //
 //
 
@@ -21,7 +21,6 @@ extension Region {
     @NSManaged public var summary: String?
     @NSManaged public var type: String?
     @NSManaged public var varieties: NSSet?
-    @NSManaged public var notes: NSSet?
 
 }
 
@@ -39,22 +38,5 @@ extension Region {
 
     @objc(removeVarieties:)
     @NSManaged public func removeFromVarieties(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for notes
-extension Region {
-
-    @objc(addNotesObject:)
-    @NSManaged public func addToNotes(_ value: Note)
-
-    @objc(removeNotesObject:)
-    @NSManaged public func removeFromNotes(_ value: Note)
-
-    @objc(addNotes:)
-    @NSManaged public func addToNotes(_ values: NSSet)
-
-    @objc(removeNotes:)
-    @NSManaged public func removeFromNotes(_ values: NSSet)
 
 }

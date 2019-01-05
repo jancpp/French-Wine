@@ -2,8 +2,8 @@
 //  Note+CoreDataProperties.swift
 //  French Wine
 //
-//  Created by Jan Polzer on 12/25/18.
-//  Copyright © 2018 Apps KC. All rights reserved.
+//  Created by Jan Polzer on 1/4/19.
+//  Copyright © 2019 Apps KC. All rights reserved.
 //
 //
 
@@ -18,6 +18,5 @@ extension Note {
     }
 
     @NSManaged public var body: String?
-    @NSManaged public var region: Region?
 
 }

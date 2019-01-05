@@ -13,7 +13,6 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
     
     // MARK: - Properties
     
-    var selectedRegion: Region?
     var url: String?
     
     override func viewDidLoad() {

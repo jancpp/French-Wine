@@ -17,7 +17,6 @@ class DetailTableViewController: UITableViewController {
     private var coreData = CoreDataStack()
     private lazy var regionTypes = [Region]()
     private lazy var varieties = [Variety]()
-    weak var managedObjectContext: NSManagedObjectContext!
     
     var selectedRegion: Region? {
         didSet {
