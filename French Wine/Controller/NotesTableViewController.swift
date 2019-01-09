@@ -11,6 +11,7 @@ import CoreData
 
 class NotesTableViewController: UITableViewController {
 
+    
     // MARK: - Properties
     
     private var coreData = CoreDataStack()
@@ -34,12 +35,21 @@ class NotesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Notes"
+        
+//        self.navigationItem.title = "Notes"
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+
         loadNotes()
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func awakeFromNib() {
+    }
     
     // MARK: - Table view data source
     
@@ -52,9 +62,9 @@ class NotesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath)
         
-        cell.textLabel?.text = noteList[indexPath.row].body
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteTableViewCell
+        cell.configureCell(note: noteList[indexPath.row])
         
         return cell
     }
@@ -101,5 +111,8 @@ class NotesTableViewController: UITableViewController {
     
     private func loadNotes() {
         noteList = NoteService.getNotes(moc: coreData.persistentContainer.viewContext)
+    }
+    @objc private func addTapped() {
+        
     }
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class NoteTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var noteLabel: UILabel!
+    
+    @IBOutlet weak var noteTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +22,16 @@ class NoteTableViewCell: UITableViewCell {
     }
     
     func configureCell(note: Note) {
-        noteLabel.text = note.body
+        noteTextView.textContainer.maximumNumberOfLines = 10
+        noteTextView.textContainer.lineBreakMode = .byTruncatingTail
+        if let body = note.body {
+            noteTextView.text = body
+        }
+        adjustTextViewHeight(textView: noteTextView)
     }
-
+    
+    func adjustTextViewHeight(textView : UITextView) {
+        textView.sizeToFit()
+        textView.isScrollEnabled = false
+    }
 }

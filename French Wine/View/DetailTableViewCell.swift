@@ -57,8 +57,7 @@ class DetailTableViewCell: UITableViewCell {
         adjustTextViewHeight(textView : varietiesTextView)
     }
     
-    func adjustTextViewHeight(textView : UITextView)
-    {
+    func adjustTextViewHeight(textView : UITextView) {
         textView.sizeToFit()
         textView.isScrollEnabled = false
     }

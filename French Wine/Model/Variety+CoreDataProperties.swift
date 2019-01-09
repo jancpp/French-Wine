@@ -2,7 +2,7 @@
 //  Variety+CoreDataProperties.swift
 //  French Wine
 //
-//  Created by Jan Polzer on 1/4/19.
+//  Created by Jan Polzer on 1/6/19.
 //  Copyright © 2019 Apps KC. All rights reserved.
 //
 //

@@ -10,13 +10,14 @@ import UIKit
 import CoreData
 
 class DetailTableViewController: UITableViewController {
-    
+        
+    private var coreData = CoreDataStack()
     
     // MARK: - Properties
     
-    private var coreData = CoreDataStack()
     private lazy var regionTypes = [Region]()
     private lazy var varieties = [Variety]()
+    //    weak var managedObjectContext: NSManagedObjectContext!
     
     var selectedRegion: Region? {
         didSet {
@@ -28,16 +29,16 @@ class DetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.parent?.title = selectedRegion?.name ?? "French Wine"
-//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
+        self.title = selectedRegion?.name ?? "French wine"
+
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
     }
     
-    override func awakeFromNib() {
+    override func viewWillAppear(_ animated: Bool) {
+        // self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,4 +72,6 @@ class DetailTableViewController: UITableViewController {
             else {return}
         regionTypes = WineService.getTypesOfRegion(moc: coreData.persistentContainer.viewContext, region: selectedRegion)
     }
+    
+    
 }

@@ -21,14 +21,18 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     }
     private lazy var regions = [Region]()
     private var region: Region?
+    var selectedRegion: Region?
     
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "French wine"
         loadRegions()
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+//        self.navigationItem.title = region?.name ?? "French wine"
+//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     override func awakeFromNib() {
@@ -54,7 +58,6 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "regionCell", for: indexPath) as! RegionTableViewCell
-        
         cell.textLabel?.text = regions[indexPath.row].name
         
         return cell
@@ -68,16 +71,13 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         if identifier == "Show detail" {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                let selectedRegion = regions[selectedIndexPath.row]
+                selectedRegion = regions[selectedIndexPath.row]
                 
-                let navigationController: UINavigationController! = segue.destination as? UINavigationController
-                
-                let tabBarController: BaseTabBarController! = navigationController.topViewController as? BaseTabBarController
-                tabBarController.selectedRegion = selectedRegion
-
-                let detailVC: DetailTableViewController! = tabBarController.viewControllers?[0] as? DetailTableViewController
-                detailVC.selectedRegion = selectedRegion
-                detailVC.title = selectedRegion.name
+                let tabBarController = segue.destination as? BaseTabBarController
+                let navigationController = tabBarController?.viewControllers?[0] as? UINavigationController
+                tabBarController?.selectedRegion = selectedRegion
+                let detailVC = navigationController?.topViewController as? DetailTableViewController
+                detailVC?.selectedRegion = selectedRegion
             }
         }
     }
@@ -90,11 +90,11 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
 }
 
 extension UIViewController {
-    var contents: UIViewController {
-        if let navcon = self as? UINavigationController {
-            return navcon.visibleViewController ?? self
-        } else {
-            return self
-        }
-    }
+//    var contents: UIViewController {
+//        if let navcon = self as? UINavigationController {
+//            return navcon.visibleViewController ?? self
+//        } else {
+//            return self
+//        }
+//    }
 }

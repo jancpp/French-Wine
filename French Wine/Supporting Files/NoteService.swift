@@ -14,13 +14,6 @@ typealias NoteHandler = (Bool, [Note]) -> ()
 
 class NoteService {
     
-//    private let moc: NSManagedObjectContext
-//    private var notes = [Note]()
-//
-//    init(moc: NSManagedObjectContext) {
-//        self.moc = moc
-//    }
-    
     // READ
     static func getNotes(moc: NSManagedObjectContext) -> [Note] {
         
@@ -33,14 +26,11 @@ class NoteService {
         catch let error as NSError {
             print("Error fetching notes: \(error.localizedDescription)")
         }
-        
-        print("Note count:")
-        print(notes.count)
         return notes
     }
     
     // CREATE
-    func addNote(body: String, completion: NoteHandler) {
+    static func addNote(moc: NSManagedObjectContext, body: String, completion: NoteHandler) {
         
 //        let note = Note(context: moc)
 //        note.body = body
