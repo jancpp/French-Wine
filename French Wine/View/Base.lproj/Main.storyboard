@@ -50,14 +50,14 @@
                         <barButtonItem key="backBarButtonItem" title="Home" id="pSn-V8-l0g"/>
                         <barButtonItem key="rightBarButtonItem" title="Notes" id="SZR-NJ-8so">
                             <connections>
-                                <segue destination="C0G-74-83I" kind="show" id="trA-eU-yYD"/>
+                                <segue destination="C0G-74-83I" kind="show" identifier="Show notes" id="trA-eU-yYD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8y-6N-uI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869.2934782608697" y="-623.1884057971015"/>
+            <point key="canvasLocation" x="1868" y="-974"/>
         </scene>
         <!--Detail-->
         <scene sceneID="R6n-Rg-JVI">
@@ -195,7 +195,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0WW-i7-dfh">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="1XE-Q3-aVQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="1XE-Q3-aVQ">
+                            <connections>
+                                <action selector="addNoteButton:" destination="iQN-Ic-TvF" id="U9Z-HO-YYC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEp-zT-QMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,7 +233,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AI5-2i-s2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="414" y="-189"/>
+            <point key="canvasLocation" x="113" y="-632"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9qb-xD-Emg">
@@ -257,7 +261,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8t-Cr-Btf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="-623"/>
+            <point key="canvasLocation" x="1029" y="-974"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="7yq-Ml-FCg">
@@ -278,7 +282,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5I-k0-TYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="231"/>
+            <point key="canvasLocation" x="1029" y="-78"/>
         </scene>
         <!--Info-->
         <scene sceneID="mzg-4H-ecI">

@@ -14,11 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     private var coreData = CoreDataStack()
-    
+    private var moc: NSManagedObjectContext!
+    override init() {
+        
+        moc = coreData.persistentContainer.viewContext
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         checkData()
-        
+        connectMOCs()
         return true
     }
     
@@ -41,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private
     
     private func checkData() {
-        let moc = coreData.persistentContainer.viewContext
+//        let moc = coreData.persistentContainer.viewContext
         let requestregions: NSFetchRequest<Region> = Region.fetchRequest()
         
         if let regionCount = try? moc.count(for: requestregions), regionCount > 0 {
@@ -51,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func uploadSampleData() {
-        let moc = coreData.persistentContainer.viewContext
+//        let moc = coreData.persistentContainer.viewContext
         
         //        DispatchQueue.global(qos: .background).async { [weak self] in
         
@@ -102,6 +107,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 coreData.saveContext()
             }
         }
+    }
+    private func connectMOCs() {
+        let root = window?.rootViewController as? UISplitViewController
+        let regionNavigation = root?.viewControllers[0] as? UINavigationController
+        let regionVC = regionNavigation?.topViewController as? RegionTableViewController
+        regionVC?.managedObjectContext = moc
+//        let noteNavigation = regionVC?.presentedViewController as? UINavigationController
+//        let noteVC = noteNavigation?.topViewController as? NotesTableViewController
+//        noteVC?.managedObjectContext = moc
+//        
+//        let tabBar = regionVC?.tabBarController as? BaseTabBarController
+        
     }
 }
 

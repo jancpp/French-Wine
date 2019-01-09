@@ -17,7 +17,15 @@ class DetailTableViewController: UITableViewController {
     
     private lazy var regionTypes = [Region]()
     private lazy var varieties = [Variety]()
-    //    weak var managedObjectContext: NSManagedObjectContext!
+    private var wineService: WineService?
+    
+    var managedObjectContext: NSManagedObjectContext? {
+        didSet {
+            if let moc = managedObjectContext {
+                wineService = WineService(moc: moc)
+            }
+        }
+    }
     
     var selectedRegion: Region? {
         didSet {
@@ -38,7 +46,6 @@ class DetailTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +77,9 @@ class DetailTableViewController: UITableViewController {
         guard
             let selectedRegion = selectedRegion
             else {return}
-        regionTypes = WineService.getTypesOfRegion(moc: coreData.persistentContainer.viewContext, region: selectedRegion)
+        if let regions = wineService?.getTypesOfRegion(region: selectedRegion) {
+            regionTypes = regions
+        }
     }
     
     

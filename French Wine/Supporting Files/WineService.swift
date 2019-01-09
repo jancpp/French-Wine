@@ -11,8 +11,17 @@ import CoreData
 
 class WineService {
     
+    private var coreData = CoreDataStack()
+    private let moc: NSManagedObjectContext
+    private var regionList = [Region]()
+    private var noteList = [Note]()
+    
+    init(moc: NSManagedObjectContext) {
+        self.moc = moc
+    }
+    
     // returns a list of all regions, including duplicates
-    static func getAllRegions(moc: NSManagedObjectContext) -> [Region] {
+    func getAllRegions() -> [Region] {
         
         var regions = [Region]()
         let request: NSFetchRequest<Region> = Region.fetchRequest()
@@ -30,7 +39,7 @@ class WineService {
     }
     
     // returns a list of all regions, excluding duplicates
-    static func getUniqueRegionNames(moc: NSManagedObjectContext) -> [Region] {
+    func getUniqueRegionNames() -> [Region] {
         
         var regions = [Region]()
         var uniqueRegions = [Region]()
@@ -57,7 +66,7 @@ class WineService {
     }
     
     // return wines with all types (red, white, rose, sparkling) in the selected region
-    static func getTypesOfRegion(moc: NSManagedObjectContext, region: Region) -> [Region] {
+    func getTypesOfRegion(region: Region) -> [Region] {
         
         var regions = [Region]()
         let request: NSFetchRequest<Region> = Region.fetchRequest()
@@ -75,7 +84,7 @@ class WineService {
     }
     
     // returns url string for specified region
-    static func getUrl(region: Region) -> String {
+    func getUrl(region: Region) -> String {
         
         var url = "https://en.wikipedia.org/wiki/French_wine"
         let regionName = region.name
@@ -106,7 +115,7 @@ class WineService {
     }
     
     // returns url string for specified region
-    static func getMapUrl(region: Region) -> String {
+    func getMapUrl(region: Region) -> String {
         
         var url = "https://upload.wikimedia.org/wikipedia/commons/2/29/Cartes_des_vins_de_france.png"
         let regionName = region.name
@@ -135,8 +144,37 @@ class WineService {
         return url
     }
     
+    func addNote(body: String, completion: NoteHandler) {
+        
+        let newNote = Note(context: moc)
+        newNote.body = body
+        noteList.append(newNote)
+        
+        do {
+            try moc.save()
+            completion(true, noteList)
+        }
+        catch let error as NSError {
+            print("Save failed: \(error.localizedDescription)")
+            moc.rollback()
+            completion(false, noteList)
+        }
+    }
     
-    
+    func getNotes() -> [Note] {
+        
+        let request: NSFetchRequest<Note> = Note.fetchRequest()
+        var notes = [Note]()
+        
+        do {
+            notes = try moc.fetch(request)
+        }
+        catch let error as NSError {
+            print("Error fetching notes: \(error.localizedDescription)")
+        }
+        
+        return notes
+    }
    
     
 }

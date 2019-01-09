@@ -7,11 +7,27 @@
 //
 
 import UIKit
+import CoreData
 import SafariServices
 
 class MapViewController: UIViewController, UIWebViewDelegate {
     
-    var mapUrl: String?
+    private var mapUrl: String?
+    private var wineService: WineService?
+    
+    var selectedRegion: Region? {
+        didSet {
+            loadData()
+        }
+    }
+    
+    var managedObjectContext: NSManagedObjectContext? {
+        didSet {
+            if let moc = managedObjectContext {
+                wineService = WineService(moc: moc)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +41,6 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        loadData()
         showMap(mapUrl: mapUrl ?? "https://upload.wikimedia.org/wikipedia/commons/2/29/Cartes_des_vins_de_france.png")
         
     }
@@ -43,13 +58,14 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     }
     
     private func loadData() {
-        if let tabBar = tabBarController as? BaseTabBarController {
-            guard
-                let selectedRegion = tabBar.selectedRegion
-                else {return}
-            
-            mapUrl = WineService.getMapUrl(region: selectedRegion)
-        }
+//        if let tabBar = tabBarController as? BaseTabBarController {
+//            guard
+//                let selectedRegion = tabBar.selectedRegion
+//                else {return}
+        guard let region = selectedRegion
+            else {return}
+            mapUrl = wineService?.getMapUrl(region: region)
+        
     }
 }
 

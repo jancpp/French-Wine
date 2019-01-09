@@ -14,14 +14,17 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     // MARK: - Properties
     
     private var coreData = CoreDataStack()
-    weak var managedObjectContext: NSManagedObjectContext! {
+    private lazy var regionsList = [Region]()
+    private var selectedRegion: Region?
+    private var wineService: WineService?
+    
+    var managedObjectContext: NSManagedObjectContext? {
         didSet {
-            return region = Region(context: managedObjectContext)
+            if let moc = managedObjectContext {
+                wineService = WineService(moc: moc)
+            }
         }
     }
-    private lazy var regions = [Region]()
-    private var region: Region?
-    var selectedRegion: Region?
     
     // MARK: - Initialization
     
@@ -30,9 +33,7 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         
         self.title = "French wine"
         loadRegions()
-        
-//        self.navigationItem.title = region?.name ?? "French wine"
-//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
     }
     
     override func awakeFromNib() {
@@ -50,15 +51,15 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if regions.count > 0 {
-            return regions.count
+        if regionsList.count > 0 {
+            return regionsList.count
         }
         return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "regionCell", for: indexPath) as! RegionTableViewCell
-        cell.textLabel?.text = regions[indexPath.row].name
+        cell.textLabel?.text = regionsList[indexPath.row].name
         
         return cell
     }
@@ -71,21 +72,38 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         if identifier == "Show detail" {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                selectedRegion = regions[selectedIndexPath.row]
+                selectedRegion = regionsList[selectedIndexPath.row]
                 
                 let tabBarController = segue.destination as? BaseTabBarController
-                let navigationController = tabBarController?.viewControllers?[0] as? UINavigationController
                 tabBarController?.selectedRegion = selectedRegion
+                // link DetailTableViewController
+                let navigationController = tabBarController?.viewControllers?[0] as? UINavigationController
                 let detailVC = navigationController?.topViewController as? DetailTableViewController
+                detailVC?.managedObjectContext = managedObjectContext
                 detailVC?.selectedRegion = selectedRegion
+                // link WikiViewController
+                let wikiVC = tabBarController?.viewControllers?[1] as? WikiViewController
+                wikiVC?.managedObjectContext = managedObjectContext
+                wikiVC?.selectedRegion = selectedRegion
+                // link MapViewController
+                let mapVC = tabBarController?.viewControllers?[2] as? MapViewController
+                mapVC?.managedObjectContext = managedObjectContext
+                mapVC?.selectedRegion = selectedRegion
             }
+        } else if identifier == "Show notes" {
+            let navigationController = segue.destination as? UINavigationController
+            let notesVC = navigationController?.topViewController as? NotesTableViewController
+            notesVC?.managedObjectContext = managedObjectContext
         }
     }
     
     // MARK: - private
     
     private func loadRegions() {
-        regions = WineService.getUniqueRegionNames(moc: coreData.persistentContainer.viewContext)
+        if let regions = wineService?.getUniqueRegionNames() {
+            regionsList = regions
+            tableView.reloadData()
+        }
     }
 }
 

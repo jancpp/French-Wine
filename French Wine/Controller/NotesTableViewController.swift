@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+typealias NoteHandler = (Bool, [Note]) -> ()
+
 class NotesTableViewController: UITableViewController {
 
     
@@ -18,10 +20,13 @@ class NotesTableViewController: UITableViewController {
     private var noteToUpdate: Note?
     private var noteList = [Note]()
     private var note: Note?
+    private var wineService: WineService?
     
-    weak var managedObjectContext: NSManagedObjectContext! {
+    var managedObjectContext: NSManagedObjectContext? {
         didSet {
-            return note = Note(context: managedObjectContext)
+            if let moc = managedObjectContext {
+                wineService = WineService(moc: moc)
+            }
         }
     }
     
@@ -35,17 +40,13 @@ class NotesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Notes"
         
-//        self.navigationItem.title = "Notes"
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-
+        self.title = "Notes"
         loadNotes()
         tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func awakeFromNib() {
@@ -85,11 +86,11 @@ class NotesTableViewController: UITableViewController {
                 else {return}
             
             if actionType == "Add" {
-//                self.noteService?.addNote(moc: self.moc, body: body, completion: { (success, notes) in
-//                    if success {
-//                        self.noteList = notes
-//                    }
-//                })
+                self.wineService?.addNote(body: body, completion: { (success, notes) in
+                    if success {
+                        self.noteList = notes
+                    }
+                })
             }
             
             DispatchQueue.main.async {
@@ -109,10 +110,31 @@ class NotesTableViewController: UITableViewController {
         return alertController
     }
     
+//    private func saveNote(completion: ((Bool) -> Void)? = nil) {
+//        let success: Bool
+//        
+//        do {
+//            try managedObjectContext.save()
+//            success = true
+//        }
+//        catch let error as NSError {
+//            print("Save failed: \(error.localizedDescription)")
+//            managedObjectContext.rollback()
+//            success = false
+//        }
+//        
+//        if let completion = completion {
+//            completion(success)
+//        }
+//    }
+    
+    // MARK: - CRUD Functions
+    
     private func loadNotes() {
-        noteList = NoteService.getNotes(moc: coreData.persistentContainer.viewContext)
-    }
-    @objc private func addTapped() {
         
+        if let notes = wineService?.getNotes() {
+            noteList = notes
+            tableView.reloadData()
+        }
     }
 }

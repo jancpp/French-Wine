@@ -10,6 +10,8 @@ import UIKit
 
 class RegionTableViewCell: UITableViewCell {
 
+    // MARK: - Outlet
+    
     @IBOutlet weak var regionNameLabel: UILabel!
     
     override func awakeFromNib() {
