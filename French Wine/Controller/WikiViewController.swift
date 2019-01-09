@@ -7,14 +7,29 @@
 //
 
 import UIKit
+import CoreData
 import SafariServices
 
 class WikiViewController: UIViewController, UIWebViewDelegate {
     
     // MARK: - Properties
     
-    var url: String?
+    private var url: String?
+    private var wineService: WineService?
     
+    var selectedRegion: Region? {
+        didSet {
+            loadData()
+        }
+    }
+    
+    var managedObjectContext: NSManagedObjectContext? {
+        didSet {
+            if let moc = managedObjectContext {
+                wineService = WineService(moc: moc)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,7 +38,6 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        loadData()
         showWebsite(url: url ?? "https://en.wikipedia.org/wiki/French_wine")
     }
 
@@ -40,12 +54,9 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
     }
     
     private func loadData() {
-        let tabBar = tabBarController as! BaseTabBarController
-        guard
-            let selectedRegion = tabBar.selectedRegion
-            else {return}
-        
-        url = WineService.getUrl(region: selectedRegion)
+        if let region = selectedRegion {
+            url = wineService?.getUrl(region: region)
+        }
     }
 }
 

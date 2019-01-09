@@ -12,7 +12,7 @@ import CoreData
 typealias NoteHandler = (Bool, [Note]) -> ()
 
 class NotesTableViewController: UITableViewController {
-
+    
     
     // MARK: - Properties
     
@@ -109,26 +109,6 @@ class NotesTableViewController: UITableViewController {
         
         return alertController
     }
-    
-//    private func saveNote(completion: ((Bool) -> Void)? = nil) {
-//        let success: Bool
-//        
-//        do {
-//            try managedObjectContext.save()
-//            success = true
-//        }
-//        catch let error as NSError {
-//            print("Save failed: \(error.localizedDescription)")
-//            managedObjectContext.rollback()
-//            success = false
-//        }
-//        
-//        if let completion = completion {
-//            completion(success)
-//        }
-//    }
-    
-    // MARK: - CRUD Functions
     
     private func loadNotes() {
         

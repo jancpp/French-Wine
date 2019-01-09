@@ -33,7 +33,7 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         
         self.title = "French wine"
         loadRegions()
-
+        
     }
     
     override func awakeFromNib() {
@@ -76,15 +76,18 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
                 
                 let tabBarController = segue.destination as? BaseTabBarController
                 tabBarController?.selectedRegion = selectedRegion
+                
                 // link DetailTableViewController
                 let navigationController = tabBarController?.viewControllers?[0] as? UINavigationController
                 let detailVC = navigationController?.topViewController as? DetailTableViewController
                 detailVC?.managedObjectContext = managedObjectContext
                 detailVC?.selectedRegion = selectedRegion
+                
                 // link WikiViewController
                 let wikiVC = tabBarController?.viewControllers?[1] as? WikiViewController
                 wikiVC?.managedObjectContext = managedObjectContext
                 wikiVC?.selectedRegion = selectedRegion
+                
                 // link MapViewController
                 let mapVC = tabBarController?.viewControllers?[2] as? MapViewController
                 mapVC?.managedObjectContext = managedObjectContext
@@ -108,11 +111,11 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
 }
 
 extension UIViewController {
-//    var contents: UIViewController {
-//        if let navcon = self as? UINavigationController {
-//            return navcon.visibleViewController ?? self
-//        } else {
-//            return self
-//        }
-//    }
+        var contents: UIViewController {
+            if let navcon = self as? UINavigationController {
+                return navcon.visibleViewController ?? self
+            } else {
+                return self
+            }
+        }
 }

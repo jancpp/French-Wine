@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class DetailTableViewController: UITableViewController {
-        
+    
     private var coreData = CoreDataStack()
     
     // MARK: - Properties
@@ -38,7 +38,7 @@ class DetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = selectedRegion?.name ?? "French wine"
-
+        
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension

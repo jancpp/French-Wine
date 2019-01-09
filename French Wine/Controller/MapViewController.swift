@@ -37,7 +37,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     }
     
     // MARK: View Controller Lifecycle
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -48,8 +48,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     // MARK: - Private
     
     private func showMap(mapUrl: String) {
-        guard
-            let mapUrl = URL(string: mapUrl)
+        guard let mapUrl = URL(string: mapUrl)
             else {return}
         let webVC = SFSafariViewController(url: mapUrl as URL)
         webVC.delegate = self
@@ -58,13 +57,9 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     }
     
     private func loadData() {
-//        if let tabBar = tabBarController as? BaseTabBarController {
-//            guard
-//                let selectedRegion = tabBar.selectedRegion
-//                else {return}
         guard let region = selectedRegion
             else {return}
-            mapUrl = wineService?.getMapUrl(region: region)
+        mapUrl = wineService?.getMapUrl(region: region)
         
     }
 }

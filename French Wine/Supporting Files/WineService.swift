@@ -144,6 +144,9 @@ class WineService {
         return url
     }
     
+    // MARK: - Notes CRUD
+    
+    // Create
     func addNote(body: String, completion: NoteHandler) {
         
         let newNote = Note(context: moc)
@@ -161,6 +164,7 @@ class WineService {
         }
     }
     
+    // Read
     func getNotes() -> [Note] {
         
         let request: NSFetchRequest<Note> = Note.fetchRequest()
@@ -176,5 +180,23 @@ class WineService {
         return notes
     }
    
+    // MARK: - private
     
+    private func save(completion: ((Bool) -> Void)? = nil) {
+        let success: Bool
+        
+        do {
+            try moc.save()
+            success = true
+        }
+        catch let error as NSError {
+            print("Save failed: \(error.localizedDescription)")
+            moc.rollback()
+            success = false
+        }
+        
+        if let completion = completion {
+            completion(success)
+        }
+    }
 }
