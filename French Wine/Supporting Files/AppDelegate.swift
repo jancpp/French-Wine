@@ -52,13 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let regionCount = try? moc.count(for: requestregions), regionCount > 0 {
             return
         }
-        uploadSampleData()
+        // run on non-main thread
+        DispatchQueue.main.async {
+            self.uploadSampleData()
+        }
     }
     
     private func uploadSampleData() {
-//        let moc = coreData.persistentContainer.viewContext
-        
-        //        DispatchQueue.global(qos: .background).async { [weak self] in
         
         if let url = Bundle.main.url(forResource: "wines", withExtension: "json"),
             let data = try? Data(contentsOf: url) {

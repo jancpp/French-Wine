@@ -163,29 +163,29 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" id="ycy-2s-Yrk" customClass="NoteTableViewCell" customModule="French_Wine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ycy-2s-Yrk" id="1gq-ts-dAX">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ycy-2s-Yrk" id="1gq-ts-dAX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="des-99-Bbb">
-                                            <rect key="frame" x="20" y="20" width="394" height="23.666666666666671"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYQ-fD-SBk">
+                                            <rect key="frame" x="20" y="20" width="374" height="21.666666666666671"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21.5" id="AeZ-7Z-dVX"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21.5" id="Hhb-Ph-Tz3"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="des-99-Bbb" firstAttribute="top" secondItem="1gq-ts-dAX" secondAttribute="top" constant="20" symbolic="YES" id="1In-9j-Zew"/>
-                                        <constraint firstItem="des-99-Bbb" firstAttribute="leading" secondItem="1gq-ts-dAX" secondAttribute="leading" constant="20" symbolic="YES" id="Guc-g1-oHI"/>
-                                        <constraint firstAttribute="trailing" secondItem="des-99-Bbb" secondAttribute="trailing" id="jyA-KV-l1e"/>
-                                        <constraint firstAttribute="bottom" secondItem="des-99-Bbb" secondAttribute="bottom" id="mGr-lq-ic7"/>
+                                        <constraint firstAttribute="bottom" secondItem="bYQ-fD-SBk" secondAttribute="bottom" constant="20" symbolic="YES" id="5Ks-Hl-cNz"/>
+                                        <constraint firstAttribute="trailing" secondItem="bYQ-fD-SBk" secondAttribute="trailing" constant="20" symbolic="YES" id="Nvb-ox-Ozr"/>
+                                        <constraint firstItem="bYQ-fD-SBk" firstAttribute="top" secondItem="1gq-ts-dAX" secondAttribute="top" constant="20" symbolic="YES" id="P0c-jn-j07"/>
+                                        <constraint firstItem="bYQ-fD-SBk" firstAttribute="leading" secondItem="1gq-ts-dAX" secondAttribute="leading" constant="20" symbolic="YES" id="SHG-PZ-7e3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="noteTextView" destination="des-99-Bbb" id="edr-zP-i8b"/>
+                                    <outlet property="noteLabel" destination="bYQ-fD-SBk" id="Wdl-Mb-QqW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

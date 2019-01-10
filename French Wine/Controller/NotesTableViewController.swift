@@ -70,14 +70,25 @@ class NotesTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Tableview delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        noteToUpdate = noteList[indexPath.row]
+        present(alertController(actionType: "Update"), animated: true, completion: nil)
+    }
+    
     // MARK: - Private functions
     
     private func alertController(actionType: String) -> UIAlertController {
         
-        let alertController = UIAlertController(title: "New note", message: "Add a note", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Wine note", message: "", preferredStyle: UIAlertController.Style.alert)
         
         alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Write a note"
+            if self.noteToUpdate?.body == "" {
+                textField.placeholder = "Write a new note"
+            } else {
+                textField.text = self.noteToUpdate?.body
+            }
         }
         
         let defaultAction = UIAlertAction(title: actionType, style: UIAlertAction.Style.default, handler: { alert -> Void in
@@ -91,8 +102,17 @@ class NotesTableViewController: UITableViewController {
                         self.noteList = notes
                     }
                 })
+            } else if actionType == "Update" {
+                guard
+                    let body = alertController.textFields?[0].text,
+                    !body.isEmpty,
+                    let noteToUpdate = self.noteToUpdate
+                    else {return}
+                
+                self.wineService?.update(note: noteToUpdate, withBody: body)
+                self.noteToUpdate = nil
             }
-            
+            // run on non-main thread
             DispatchQueue.main.async {
                 self.loadNotes()
             }

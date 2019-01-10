@@ -179,6 +179,13 @@ class WineService {
         
         return notes
     }
+    
+    // Update
+    func update(note: Note, withBody body: String) {
+        
+        note.body = body
+        save()
+    }
    
     // MARK: - private
     
