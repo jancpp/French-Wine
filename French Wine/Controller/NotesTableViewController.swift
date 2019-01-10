@@ -43,7 +43,6 @@ class NotesTableViewController: UITableViewController {
         
         self.title = "Notes"
         loadNotes()
-        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +64,7 @@ class NotesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteTableViewCell
+        
         cell.configureCell(note: noteList[indexPath.row])
         
         return cell
@@ -75,6 +75,22 @@ class NotesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         noteToUpdate = noteList[indexPath.row]
         present(alertController(actionType: "Update"), animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            wineService?.delete(note: noteList[indexPath.row], deleteHandler: { [weak self] (success) in
+                if success {
+                    self?.noteList.remove(at: indexPath.row)
+                    self?.tableView.deleteRows(at: [indexPath], with: .fade)
+                } else {
+                    let alertController = UIAlertController(title: "Delete failed", message: "", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self?.present(alertController, animated: true, completion: nil)
+                }
+            })
+        }
     }
     
     // MARK: - Private functions

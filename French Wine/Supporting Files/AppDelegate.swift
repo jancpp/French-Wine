@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private
     
     private func checkData() {
-//        let moc = coreData.persistentContainer.viewContext
         let requestregions: NSFetchRequest<Region> = Region.fetchRequest()
         
         if let regionCount = try? moc.count(for: requestregions), regionCount > 0 {
@@ -108,17 +107,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
     private func connectMOCs() {
         let root = window?.rootViewController as? UISplitViewController
         let regionNavigation = root?.viewControllers[0] as? UINavigationController
         let regionVC = regionNavigation?.topViewController as? RegionTableViewController
         regionVC?.managedObjectContext = moc
-//        let noteNavigation = regionVC?.presentedViewController as? UINavigationController
-//        let noteVC = noteNavigation?.topViewController as? NotesTableViewController
-//        noteVC?.managedObjectContext = moc
-//        
-//        let tabBar = regionVC?.tabBarController as? BaseTabBarController
-        
     }
 }
 

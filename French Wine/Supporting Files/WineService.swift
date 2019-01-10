@@ -186,6 +186,12 @@ class WineService {
         note.body = body
         save()
     }
+    
+    // Delete
+    func delete(note: Note, deleteHandler: @escaping (Bool) -> Void) {
+        moc.delete(note)
+        save(completion: deleteHandler)
+    }
    
     // MARK: - private
     
