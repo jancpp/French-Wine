@@ -14,15 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     private var coreData = CoreDataStack()
-//    private var moc: NSManagedObjectContext!
     override init() {
-        
-//        moc = coreData.persistentContainer.viewContext
-    }
+}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let moc = coreData.persistentContainer.viewContext
         checkData()
         connectMOCs()
         return true
