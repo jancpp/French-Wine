@@ -16,8 +16,8 @@ class DetailTableViewCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var varietiesTextView: UITextView!
-    @IBOutlet weak var summaryTextView: UITextView!
+    @IBOutlet weak var varietiesLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
     
     // MARK: Properties
     
@@ -31,17 +31,16 @@ class DetailTableViewCell: UITableViewCell {
 
     func configureCell(region: Region, varieties: [Variety]) {
         
-        typeLabel.text = region.type?.localizedUppercase
+        var typeStr: String = region.type ?? ""
+        typeStr.append(" wine")
+        typeLabel.text = typeStr.localizedUppercase
         typeLabel.font = UIFont.boldSystemFont(ofSize: typeLabel.font.pointSize)
         
         var summaryStr: String = "Summary:\n"
-        summaryTextView.textContainer.maximumNumberOfLines = 10
-        summaryTextView.textContainer.lineBreakMode = .byTruncatingTail
         if let summary = region.summary {
             summaryStr.append(summary)
-            summaryTextView.text = summaryStr
+            summaryLabel.text = summaryStr
         }
-        adjustTextViewHeight(textView : summaryTextView)
         
         var varieties = [Variety]()
         varieties = region.varieties?.allObjects as! [Variety]
@@ -53,8 +52,7 @@ class DetailTableViewCell: UITableViewCell {
             }
             varietiesStr.append("\(varieties[varieties.count - 1].name ?? "")")
         }
-        varietiesTextView.text = varietiesStr
-        adjustTextViewHeight(textView : varietiesTextView)
+        varietiesLabel.text = varietiesStr
     }
     
     func adjustTextViewHeight(textView : UITextView) {

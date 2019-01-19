@@ -33,6 +33,7 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         
         self.title = "French wine"
         loadRegions()
+        tableView.reloadData()
         
     }
     
@@ -58,8 +59,9 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "regionCell", for: indexPath) as! RegionTableViewCell
-        cell.textLabel?.text = regionsList[indexPath.row].name
+        cell.regionNameLabel.text = regionsList[indexPath.row].name
         
         return cell
     }
@@ -111,11 +113,11 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
 }
 
 extension UIViewController {
-        var contents: UIViewController {
-            if let navcon = self as? UINavigationController {
-                return navcon.visibleViewController ?? self
-            } else {
-                return self
-            }
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? self
+        } else {
+            return self
         }
+    }
 }

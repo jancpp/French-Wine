@@ -14,14 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     private var coreData = CoreDataStack()
-    private var moc: NSManagedObjectContext!
+//    private var moc: NSManagedObjectContext!
     override init() {
         
-        moc = coreData.persistentContainer.viewContext
+//        moc = coreData.persistentContainer.viewContext
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        let moc = coreData.persistentContainer.viewContext
         checkData()
         connectMOCs()
         return true
@@ -46,18 +47,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private
     
     private func checkData() {
+        let moc = coreData.persistentContainer.viewContext
+
         let requestregions: NSFetchRequest<Region> = Region.fetchRequest()
         
         if let regionCount = try? moc.count(for: requestregions), regionCount > 0 {
             return
         }
-        // run on non-main thread
-        DispatchQueue.main.async {
-            self.uploadSampleData()
-        }
+        self.uploadSampleData()
     }
     
     private func uploadSampleData() {
+        let moc = coreData.persistentContainer.viewContext
+
         
         if let url = Bundle.main.url(forResource: "wines", withExtension: "json"),
             let data = try? Data(contentsOf: url) {
@@ -109,6 +111,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func connectMOCs() {
+        let moc = coreData.persistentContainer.viewContext
+
         let root = window?.rootViewController as? UISplitViewController
         let regionNavigation = root?.viewControllers[0] as? UINavigationController
         let regionVC = regionNavigation?.topViewController as? RegionTableViewController

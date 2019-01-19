@@ -41,7 +41,7 @@ class DetailTableViewController: UITableViewController {
         
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.allowsSelection = false
         tableView.reloadData()
     }
     
