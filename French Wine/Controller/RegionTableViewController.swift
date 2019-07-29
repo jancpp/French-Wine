@@ -49,6 +49,21 @@ class RegionTableViewController: UITableViewController, UISplitViewControllerDel
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        selectDefaultRowAndShowDetail()
+    }
+    
+    func selectDefaultRowAndShowDetail() {
+        
+        let indexPath = NSIndexPath(row: 0, section: 0)
+        
+        tableView.selectRow(at: indexPath as IndexPath, animated: true, scrollPosition:UITableView.ScrollPosition.none)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            self.performSegue(withIdentifier: "Show detail", sender: indexPath)
+        }
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

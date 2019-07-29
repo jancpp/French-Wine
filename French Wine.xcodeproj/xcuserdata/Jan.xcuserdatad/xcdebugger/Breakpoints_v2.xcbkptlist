@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "French Wine/Supporting Files/AppDelegate.swift"
-            timestampString = "569598579.901665"
+            timestampString = "583429012.206457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "checkData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "French Wine/Supporting Files/AppDelegate.swift"
-            timestampString = "569598579.902472"
+            timestampString = "583429012.207018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "uploadSampleData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "French Wine/Supporting Files/AppDelegate.swift"
-            timestampString = "569598579.90285"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "connectMOCs()"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,12 +41,76 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "French Wine/Supporting Files/AppDelegate.swift"
-            timestampString = "569598579.903173"
+            filePath = "French Wine/Controller/RegionTableViewController.swift"
+            timestampString = "586057231.770991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "managedObjectContext"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "French Wine/Supporting Files/WineService.swift"
+            timestampString = "583418327.700766"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(moc:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.WineService.__allocating_init(moc: __C.NSManagedObjectContext) -&gt; French_Wine.WineService"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Supporting%20Files/WineService.swift"
+                  timestampString = "583429012.290195"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "14">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.WineService.init(moc: __C.NSManagedObjectContext) -&gt; French_Wine.WineService"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Supporting%20Files/WineService.swift"
+                  timestampString = "583429012.293364"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "French Wine/Supporting Files/AppDelegate.swift"
+            timestampString = "583429012.207494"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "uploadSampleData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,44 +122,151 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "French Wine/Controller/RegionTableViewController.swift"
-            timestampString = "568969366.644868"
+            timestampString = "586057231.7715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "RegionTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.RegionTableViewController.(wineService in _5A9E257C6CFFA1E8B1F2702692B9E37F).getter : Swift.Optional&lt;French_Wine.WineService&gt;"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Controller/RegionTableViewController.swift"
+                  timestampString = "583433692.721668"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.RegionTableViewController.(wineService in _5A9E257C6CFFA1E8B1F2702692B9E37F).setter : Swift.Optional&lt;French_Wine.WineService&gt;"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Controller/RegionTableViewController.swift"
+                  timestampString = "583433692.72356"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.RegionTableViewController.(wineService in _5A9E257C6CFFA1E8B1F2702692B9E37F).modify : Swift.Optional&lt;French_Wine.WineService&gt;"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Controller/RegionTableViewController.swift"
+                  timestampString = "583433692.7250561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.RegionTableViewController.(wineService in _5A9E257C6CFFA1E8B1F2702692B9E37F).modify : Swift.Optional&lt;French_Wine.WineService&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Controller/RegionTableViewController.swift"
+                  timestampString = "583433692.72654"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.RegionTableViewController.init(style: __C.UITableViewStyle) -&gt; French_Wine.RegionTableViewController"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Controller/RegionTableViewController.swift"
+                  timestampString = "583433692.728001"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "400">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.RegionTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; French_Wine.RegionTableViewController"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Controller/RegionTableViewController.swift"
+                  timestampString = "583433692.729596"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "497">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "French_Wine.RegionTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;French_Wine.RegionTableViewController&gt;"
+                  moduleName = "French Wine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jan/Code/swift/French%20Wine/French%20Wine/Controller/RegionTableViewController.swift"
+                  timestampString = "583433692.731081"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "422">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "French Wine/Controller/RegionTableViewController.swift"
+            timestampString = "586057231.771799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "French Wine/Controller/RegionTableViewController.swift"
-            timestampString = "568969366.6452"
+            timestampString = "586057231.772071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "French Wine/Controller/RegionTableViewController.swift"
-            timestampString = "568969366.645273"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "splitViewController(_:collapseSecondary:onto:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

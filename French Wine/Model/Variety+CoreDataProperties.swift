@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Variety {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Variety> {
